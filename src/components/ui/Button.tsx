@@ -1,4 +1,6 @@
+"use client";
 import { ButtonHTMLAttributes } from "react";
+import { motion } from "framer-motion";
 
 type Variant = "primary" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
@@ -14,8 +16,7 @@ const variants: Record<Variant, string> = {
   primary: "bg-brand.blue text-white hover:bg-brand.dark",
   outline:
     "border border-white/80 text-white hover:bg-white/10 hover:border-white",
-  ghost:
-    "text-brand.blue hover:bg-brand.blue50",
+  ghost: "text-brand.blue hover:bg-brand.blue50",
 };
 
 export default function Button({
@@ -28,9 +29,11 @@ export default function Button({
   "data-size"?: Size;
 }) {
   return (
-    <button
-      className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
-      {...props}
-    />
+    <motion.div whileTap={{ scale: 0.95 }}>
+      <button
+        className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
+        {...props}
+      />
+    </motion.div>
   );
 }
