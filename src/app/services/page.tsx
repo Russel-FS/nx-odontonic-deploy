@@ -32,7 +32,7 @@ const services = [
     highlight: "Resultados en una sola sesión",
   },
   {
-    title: "Ortodoncia Invisible",
+    title: "Ortodoncia",
     subtitle: "Alineación perfecta, discreción total",
     desc: "Corregimos la posición dental con alineadores transparentes y tecnología 3D para un tratamiento cómodo y prácticamente invisible.",
     icon: Smile,
@@ -48,7 +48,7 @@ const services = [
     highlight: "Sin brackets metálicos",
   },
   {
-    title: "Implantología Avanzada",
+    title: "Periodoncia e Implantes dentales",
     subtitle: "Restauración natural y permanente",
     desc: "Reemplazamos piezas dentales perdidas con implantes de titanio de última generación y técnicas de cirugía guiada por computadora.",
     icon: Heart,
@@ -64,7 +64,7 @@ const services = [
     highlight: "98% de éxito garantizado",
   },
   {
-    title: "Endodoncia Digital",
+    title: "Endodoncia Rotatoria",
     subtitle: "Salvamos tu diente natural",
     desc: "Tratamientos de conducto con microscopía y tecnología rotatoria para preservar tus dientes naturales con máxima precisión.",
     icon: Zap,
@@ -96,7 +96,7 @@ const services = [
     highlight: "Experiencia sin miedo ni dolor",
   },
   {
-    title: "Prevención Integral",
+    title: "Cirugia Dental y urgencias dentales",
     subtitle: "Tu salud dental es nuestra prioridad",
     desc: "Programas personalizados de prevención y mantenimiento para conservar tu sonrisa saludable durante toda la vida.",
     icon: Shield,
