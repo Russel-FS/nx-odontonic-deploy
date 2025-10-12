@@ -47,7 +47,7 @@ export default function Navbar() {
             href={site.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg px-4 py-2 text-sm bg-brand.blue text-white hover:bg-brand.dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand.blue/30"
+            className="rounded-lg px-4 py-2 text-sm bg-[#0e5d88] text-white hover:bg-brand.dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand.blue/30"
           >
             Agendar cita
           </a>
@@ -91,7 +91,7 @@ export default function Navbar() {
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 rounded-lg px-4 py-2 bg-brand.blue text-white hover:bg-brand.dark text-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand.blue/30"
+                className="mt-1 rounded-lg px-4 py-2 bg-[#0e5d88] text-white hover:bg-brand.dark text-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand.blue/30"
               >
                 Agendar cita
               </a>

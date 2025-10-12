@@ -13,10 +13,10 @@ const sizes: Record<Size, string> = {
   lg: "text-base px-6 py-3.5",
 };
 const variants: Record<Variant, string> = {
-  primary: "bg-brand.blue text-white hover:bg-brand.dark",
+  primary: "bg-brand-blue text-white hover:bg-brand.dark",
   outline:
     "border border-white/80 text-white hover:bg-white/10 hover:border-white",
-  ghost: "text-brand.blue hover:bg-brand.blue50",
+  ghost: "text-brand.blue hover:bg-brand-blue50",
 };
 
 export default function Button({

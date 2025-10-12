@@ -5,267 +5,315 @@ import {
   Smile,
   Heart,
   Zap,
-  Scissors,
+  Shield,
   ArrowRight,
+  Star,
+  CheckCircle,
 } from "lucide-react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import Section from "@/components/ui/Section";
 
 const services = [
   {
-    title: "Estética Dental y Rehabilitación Oral",
-    desc: "Blanqueamiento, resinas, carillas y rehabilitación completa para una sonrisa perfecta. Utilizamos las técnicas más avanzadas para devolver la funcionalidad y belleza a tu sonrisa.",
+    title: "Estética Dental",
+    subtitle: "Sonrisas que inspiran confianza",
+    desc: "Transformamos sonrisas con tecnología de vanguardia y técnicas mínimamente invasivas para resultados naturales y duraderos.",
     icon: Sparkles,
+    color: "from-blue-500 to-cyan-400",
     image:
-      "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&h=500&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop&crop=center",
     features: [
-      "Blanqueamiento profesional",
-      "Carillas de porcelana",
-      "Resinas estéticas",
-      "Rehabilitación completa",
+      "Blanqueamiento láser avanzado",
+      "Carillas de porcelana ultrafinas",
+      "Diseño digital de sonrisa",
+      "Rehabilitación estética completa",
     ],
+    highlight: "Resultados en una sola sesión",
   },
   {
-    title: "Ortodoncia",
-    desc: "Corrección de la posición dental con brackets tradicionales o alineadores invisibles. Tratamientos personalizados para todas las edades.",
+    title: "Ortodoncia Invisible",
+    subtitle: "Alineación perfecta, discreción total",
+    desc: "Corregimos la posición dental con alineadores transparentes y tecnología 3D para un tratamiento cómodo y prácticamente invisible.",
     icon: Smile,
+    color: "from-emerald-500 to-teal-400",
     image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=500&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&crop=center",
     features: [
-      "Brackets metálicos",
-      "Brackets estéticos",
-      "Alineadores invisibles",
-      "Ortodoncia interceptiva",
+      "Alineadores invisibles personalizados",
+      "Planificación digital 3D",
+      "Seguimiento con IA",
+      "Tratamiento acelerado",
     ],
+    highlight: "Sin brackets metálicos",
   },
   {
-    title: "Periodoncia e Implantes Dentales",
-    desc: "Salud de encías y reemplazo de piezas dentales con alta predictibilidad. Soluciones integrales para la salud periodontal.",
+    title: "Implantología Avanzada",
+    subtitle: "Restauración natural y permanente",
+    desc: "Reemplazamos piezas dentales perdidas con implantes de titanio de última generación y técnicas de cirugía guiada por computadora.",
     icon: Heart,
+    color: "from-rose-500 to-pink-400",
     image:
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&h=500&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop&crop=center",
     features: [
-      "Tratamiento de encías",
-      "Implantes de titanio",
-      "Cirugía periodontal",
-      "Mantenimiento periodontal",
+      "Implantes de titanio premium",
+      "Cirugía guiada por computadora",
+      "Carga inmediata disponible",
+      "Garantía de por vida",
     ],
+    highlight: "98% de éxito garantizado",
   },
   {
-    title: "Endodoncia Rotatoria",
-    desc: "Tratamiento de conductos con tecnología rotatoria de última generación. Procedimientos más rápidos y cómodos para el paciente.",
+    title: "Endodoncia Digital",
+    subtitle: "Salvamos tu diente natural",
+    desc: "Tratamientos de conducto con microscopía y tecnología rotatoria para preservar tus dientes naturales con máxima precisión.",
     icon: Zap,
+    color: "from-amber-500 to-orange-400",
     image:
-      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&h=500&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop&crop=center",
     features: [
-      "Tecnología rotatoria",
-      "Diagnóstico digital",
-      "Tratamiento en una sesión",
-      "Mínimo dolor postoperatorio",
+      "Microscopía de alta precisión",
+      "Instrumentación rotatoria",
+      "Diagnóstico con tomografía 3D",
+      "Sedación consciente disponible",
     ],
+    highlight: "Sin dolor, máxima precisión",
   },
   {
-    title: "Cirugía Dental y Urgencias Dentales",
-    desc: "Procedimientos quirúrgicos y atención inmediata para emergencias dentales. Disponibles para urgencias las 24 horas.",
-    icon: Scissors,
+    title: "Prevención Integral",
+    subtitle: "Tu salud dental es nuestra prioridad",
+    desc: "Programas personalizados de prevención y mantenimiento para conservar tu sonrisa saludable durante toda la vida.",
+    icon: Shield,
+    color: "from-violet-500 to-purple-400",
     image:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=500&h=500&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&h=600&fit=crop&crop=center",
     features: [
-      "Extracciones complejas",
-      "Cirugía de cordales",
-      "Atención de urgencias",
-      "Cirugía oral menor",
+      "Limpieza ultrasónica avanzada",
+      "Fluorización profesional",
+      "Selladores de fisuras",
+      "Plan de mantenimiento personalizado",
     ],
+    highlight: "Prevenir es mejor que curar",
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] },
 };
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <Section className="pt-32 pb-20">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Ultra Minimal Apple Style */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-gray-50/50 to-white">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-              Nuestros
-              <span className="block font-medium bg-gradient-to-r from-[#0e5d88] to-[#1a73a8] bg-clip-text text-transparent">
-                Servicios
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
-              Experiencia dental excepcional con tecnología de vanguardia y
-              atención personalizada
-            </p>
-          </motion.div>
-        </Container>
-      </Section>
-
-      <Section className="py-20">
-        <Container>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="grid gap-16 max-w-7xl mx-auto"
-          >
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <motion.div
-                  key={service.title}
-                  variants={itemVariants}
-                  className={`grid lg:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                  }`}
+          <div className="pt-40 pb-32 text-center">
+            <motion.div {...fadeInUp} className="max-w-6xl mx-auto space-y-12">
+              <div className="space-y-8">
+                <motion.h1
+                  className="text-7xl md:text-8xl lg:text-9xl font-extralight text-gray-900 tracking-tight leading-[0.9]"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                  {/* Content */}
-                  <div
-                    className={`space-y-8 ${
-                      index % 2 === 1 ? "lg:col-start-2" : ""
-                    }`}
+                  Servicios
+                </motion.h1>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.3 }}
+                  className="relative"
+                >
+                  <h2 className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#0e5d88] via-[#1a73a8] to-[#2563eb] bg-clip-text text-transparent">
+                    Excepcionales
+                  </h2>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Services Section - Card Grid Apple Style */}
+      <section className="py-32 bg-white">
+        <Container>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="grid gap-8 md:gap-12"
+            >
+              {services.map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: index * 0.2,
+                      ease: [0.6, -0.05, 0.01, 0.99],
+                    }}
+                    className="group"
                   >
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#0e5d88] to-[#1a73a8] rounded-2xl flex items-center justify-center shadow-lg">
-                          <IconComponent className="h-8 w-8 text-white" />
+                    <div
+                      className={`grid lg:grid-cols-2 gap-16 items-center ${
+                        index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                      }`}
+                    >
+                      {/* Content */}
+                      <div
+                        className={`space-y-10 ${
+                          index % 2 === 1 ? "lg:col-start-2" : ""
+                        }`}
+                      >
+                        <div className="space-y-8">
+                          {/* Icon & Title */}
+                          <div className="space-y-6">
+                            <motion.div
+                              whileHover={{ scale: 1.05, rotate: 5 }}
+                              className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-3xl flex items-center justify-center shadow-xl shadow-blue-500/20`}
+                            >
+                              <IconComponent className="h-10 w-10 text-white" />
+                            </motion.div>
+
+                            <div className="space-y-3">
+                              <h3 className="text-5xl md:text-6xl font-extralight text-gray-900 tracking-tight leading-tight">
+                                {service.title}
+                              </h3>
+                              <p className="text-xl text-[#0e5d88] font-light">
+                                {service.subtitle}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Description */}
+                          <p className="text-xl text-gray-600 font-light leading-relaxed">
+                            {service.desc}
+                          </p>
+
+                          {/* Highlight Badge */}
+                          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0e5d88]/10 to-blue-500/10 px-6 py-3 rounded-full border border-[#0e5d88]/20">
+                            <CheckCircle className="h-5 w-5 text-[#0e5d88]" />
+                            <span className="text-[#0e5d88] font-medium">
+                              {service.highlight}
+                            </span>
+                          </div>
                         </div>
-                        <div>
-                          <h2 className="text-3xl font-medium text-gray-900 tracking-tight">
-                            {service.title}
-                          </h2>
+
+                        {/* Features */}
+                        <div className="space-y-4">
+                          {service.features.map((feature, featureIndex) => (
+                            <motion.div
+                              key={feature}
+                              initial={{ opacity: 0, x: -30 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{
+                                delay: 0.8 + index * 0.2 + featureIndex * 0.1,
+                                duration: 0.6,
+                              }}
+                              className="flex items-center gap-4 group/feature"
+                            >
+                              <div className="w-2 h-2 bg-[#0e5d88] rounded-full group-hover/feature:scale-150 transition-transform duration-300" />
+                              <span className="text-lg text-gray-700 font-light group-hover/feature:text-[#0e5d88] transition-colors">
+                                {feature}
+                              </span>
+                            </motion.div>
+                          ))}
                         </div>
+
+                        {/* CTA */}
+                        <motion.button
+                          whileHover={{ scale: 1.02, y: -2 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="inline-flex items-center gap-3 bg-[#0e5d88] text-white px-8 py-4 rounded-full font-medium hover:bg-[#0a4a6b] transition-all duration-300 shadow-xl hover:shadow-2xl shadow-[#0e5d88]/25"
+                        >
+                          Conocer más
+                          <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
                       </div>
 
-                      <p className="text-lg text-gray-600 leading-relaxed font-light">
-                        {service.desc}
-                      </p>
-                    </div>
-
-                    {/* Features */}
-                    <div className="space-y-4">
-                      {service.features.map((feature, featureIndex) => (
+                      {/* Image */}
+                      <div
+                        className={`${
+                          index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                        }`}
+                      >
                         <motion.div
-                          key={feature}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{
-                            delay: 0.4 + featureIndex * 0.1,
-                            duration: 0.5,
-                          }}
-                          className="flex items-center gap-4 group"
+                          whileHover={{ scale: 1.02, y: -8 }}
+                          transition={{ duration: 0.4, ease: "easeOut" }}
+                          className="relative group/image"
                         >
-                          <div className="w-2 h-2 bg-[#0e5d88] rounded-full group-hover:scale-125 transition-transform duration-200" />
-                          <span className="text-gray-700 font-light">
-                            {feature}
-                          </span>
+                          <div className="absolute inset-0 bg-gradient-to-br from-[#0e5d88]/20 to-blue-500/20 rounded-[3rem] blur-xl group-hover/image:blur-2xl transition-all duration-500 opacity-0 group-hover/image:opacity-100" />
+                          <div className="relative rounded-[3rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3]">
+                            <Image
+                              src={service.image}
+                              alt={service.title}
+                              fill
+                              className="object-cover group-hover/image:scale-105 transition-transform duration-700"
+                              unoptimized
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                          </div>
                         </motion.div>
-                      ))}
+                      </div>
                     </div>
-
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center gap-2 bg-[#0e5d88] text-white px-6 py-3 rounded-full font-medium hover:bg-[#0a4a6b] transition-all duration-200 shadow-lg hover:shadow-xl"
-                    >
-                      Más información
-                      <ArrowRight className="h-4 w-4" />
-                    </motion.button>
-                  </div>
-
-                  <div
-                    className={`${
-                      index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                    }`}
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3]"
-                    >
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                    </motion.div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
         </Container>
-      </Section>
+      </section>
 
-      {/* CTA Section */}
-      <Section className="py-24">
+      {/* CTA Section - Minimal & Elegant */}
+      <section className="py-32 bg-gradient-to-b from-white to-gray-50/50">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-center"
+            transition={{ delay: 1, duration: 1 }}
+            className="text-center max-w-5xl mx-auto"
           >
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-[#0e5d88] to-[#1a73a8] rounded-[2.5rem] p-12 md:p-16 text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-32 translate-x-32" />
-                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-24 -translate-x-24" />
-                </div>
+            <div className="relative">
+              {/* Background Blur Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0e5d88]/5 via-blue-500/5 to-[#0e5d88]/5 rounded-[4rem] blur-3xl" />
 
-                <div className="relative z-10 space-y-8">
-                  <h3 className="text-3xl md:text-4xl font-medium tracking-tight">
-                    ¿Listo para transformar tu sonrisa?
-                  </h3>
-                  <p className="text-xl font-light opacity-90 max-w-2xl mx-auto leading-relaxed">
-                    Agenda una consulta personalizada y descubre el tratamiento
-                    ideal para ti con nuestro equipo de especialistas.
-                  </p>
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-[4rem] p-16 md:p-20 border border-gray-200/50 shadow-2xl">
+                <div className="space-y-12">
+                  <div className="space-y-6">
+                    <h3 className="text-5xl md:text-6xl font-extralight text-gray-900 tracking-tight leading-tight">
+                      ¿Listo para tu
+                      <span className="block bg-gradient-to-r from-[#0e5d88] to-blue-500 bg-clip-text text-transparent font-light">
+                        nueva sonrisa?
+                      </span>
+                    </h3>
+                    <p className="text-2xl text-gray-600 font-extralight leading-relaxed max-w-3xl mx-auto">
+                      Agenda una consulta personalizada y descubre cómo podemos
+                      transformar tu sonrisa
+                    </p>
+                  </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                     <motion.a
                       href="#contacto"
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-3 bg-white text-[#0e5d88] px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all duration-200 shadow-lg"
+                      className="inline-flex items-center gap-3 bg-[#0e5d88] hover:text-white text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-[#0a4a6b] transition-all duration-300 shadow-xl hover:shadow-2xl shadow-[#0e5d88]/30"
                     >
                       Agendar Consulta
-                      <ArrowRight className="h-5 w-5" />
+                      <ArrowRight className="h-6 w-6" />
                     </motion.a>
 
                     <motion.a
                       href="tel:+1234567890"
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-3 border-2 border-white/30 text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all duration-200"
+                      className="inline-flex items-center gap-3 border-2 border-[#0e5d88]/20 text-[#0e5d88] px-10 py-5 rounded-full text-lg font-medium hover:bg-[#0e5d88]/5 transition-all duration-300"
                     >
                       Llamar ahora
                     </motion.a>
@@ -275,7 +323,7 @@ export default function ServicesPage() {
             </div>
           </motion.div>
         </Container>
-      </Section>
-    </main>
+      </section>
+    </div>
   );
 }
