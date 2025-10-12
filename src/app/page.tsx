@@ -12,7 +12,6 @@ import Map from "@/components/sections/Map";
 export default function HomePage() {
   return (
     <>
-      <Navbar />
       <main>
         <Hero />
         <About />
@@ -21,8 +20,6 @@ export default function HomePage() {
         <Contact />
         <Map />
       </main>
-      <Footer />
-      <WhatsAppFloat />
     </>
   );
 }

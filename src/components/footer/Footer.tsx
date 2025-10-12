@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/components/ui/Container";
 import { site } from "@/config/site.config";
 
@@ -13,19 +14,49 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-brand.dark">Redes</h4>
           <ul className="mt-2 space-y-1 text-sm">
-            <li><a className="hover:underline" href={site.socials.instagram} target="_blank">Instagram</a></li>
-            <li><a className="hover:underline" href={site.socials.facebook} target="_blank">Facebook</a></li>
-            <li><a className="hover:underline" href={site.socials.tiktok} target="_blank">TikTok</a></li>
+            <li>
+              <a
+                className="hover:underline"
+                href={site.socials.instagram}
+                target="_blank"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                className="hover:underline"
+                href={site.socials.facebook}
+                target="_blank"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                className="hover:underline"
+                href={site.socials.tiktok}
+                target="_blank"
+              >
+                TikTok
+              </a>
+            </li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold text-brand.dark">WhatsApp</h4>
-          <a className="mt-2 inline-block rounded-lg bg-brand.blue text-white px-4 py-2"
-             href={site.whatsapp} target="_blank">Escríbenos ahora</a>
+          <a
+            className="mt-2 inline-block rounded-lg bg-brand.blue text-white px-4 py-2"
+            href={site.whatsapp}
+            target="_blank"
+          >
+            Escríbenos ahora
+          </a>
         </div>
       </Container>
       <div className="py-4 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} {site.shortName}. Todos los derechos reservados.
+        © {new Date().getFullYear()} {site.shortName}. Todos los derechos
+        reservados.
       </div>
     </footer>
   );

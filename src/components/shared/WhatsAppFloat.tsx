@@ -1,3 +1,4 @@
+"use client";
 import { site } from "@/config/site.config";
 
 export default function WhatsAppFloat() {
