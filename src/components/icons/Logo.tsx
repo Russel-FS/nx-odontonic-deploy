@@ -61,7 +61,7 @@ const Logo = ({
         </svg>
       </motion.div>
 
-      {/* Texto Go! Odontic */}
+      {/* Texto Go Odontic */}
       {showBrandText && (
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -73,7 +73,7 @@ const Logo = ({
             className="font-bold  leading-tight"
             style={{ fontSize: `${brandTextSize}px`, color: text_color }}
           >
-            Go! Odontic
+            Go Odontic
           </h1>
         </motion.div>
       )}

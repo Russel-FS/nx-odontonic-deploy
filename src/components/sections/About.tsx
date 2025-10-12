@@ -58,9 +58,9 @@ export default function About() {
               </h3>
 
               <p className="text-xl text-gray-600 font-light leading-relaxed">
-                En Go! Odontic creemos que una sonrisa saludable es mucho más
-                que dientes perfectos. Es confianza, bienestar y calidad de
-                vida. Por eso combinamos la tecnología más avanzada con el toque
+                En Go Odontic creemos que una sonrisa saludable es mucho más que
+                dientes perfectos. Es confianza, bienestar y calidad de vida.
+                Por eso combinamos la tecnología más avanzada con el toque
                 humano que hace la diferencia.
               </p>
 
@@ -112,7 +112,7 @@ export default function About() {
             <div className="relative rounded-[3rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3]">
               <Image
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop&crop=center"
-                alt="Equipo Go! Odontic"
+                alt="Equipo Go Odontic"
                 fill
                 className="object-cover"
                 unoptimized

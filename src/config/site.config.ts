@@ -1,6 +1,6 @@
 export const site = {
-  name: "Go! Odontic - Clínica Dental",
-  shortName: "Go! Odontic",
+  name: "Go Odontic - Clínica Dental",
+  shortName: "Go Odontic",
   description:
     "Clínica dental en Santiago de Surco. Especialidades odontológicas, atención por especialistas y agendamiento por WhatsApp.",
   phone: "+51 903 072 982",
@@ -16,7 +16,7 @@ export const site = {
 
   nav: [
     { label: "Inicio", href: "/" },
-    { label: "Nosotros", href: "#nosotros" },
+    { label: "Nosotros", href: "/about" },
     { label: "Servicios", href: "/services" },
     { label: "Blog", href: "blog" },
     { label: "Contacto", href: "#contacto" },

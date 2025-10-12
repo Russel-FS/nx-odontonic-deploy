@@ -43,7 +43,7 @@ export default function Hero() {
               >
                 Sonríe con
                 <span className="block font-light bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
-                  Go! Odontic
+                  Go Odontic
                 </span>
               </motion.h1>
 

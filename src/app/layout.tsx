@@ -9,7 +9,7 @@ import LayoutClient from "@/components/shared/LayoutClient";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Go! Odontic - Clínica Dental",
+  title: "Go Odontic - Clínica Dental",
   description:
     "Odontología integral en Surco: ortodoncia, estética, implantes y más. Agenda tu cita por WhatsApp.",
   icons: { icon: "/favicon.ico" },
