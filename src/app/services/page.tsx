@@ -135,7 +135,7 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <section className="py-32 bg-white">
+      <section className="py-20 bg-white">
         <Container>
           <div className="max-w-7xl mx-auto">
             <motion.div
