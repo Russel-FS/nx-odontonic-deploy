@@ -9,6 +9,7 @@ import {
   ArrowRight,
   Star,
   CheckCircle,
+  Baby,
 } from "lucide-react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
@@ -77,6 +78,22 @@ const services = [
       "Sedación consciente disponible",
     ],
     highlight: "Sin dolor, máxima precisión",
+  },
+  {
+    title: "Odontopediatría",
+    subtitle: "Cuidado dental especializado para niños",
+    desc: "Atención dental integral para los más pequeños en un ambiente amigable y divertido, creando experiencias positivas que duran toda la vida.",
+    icon: Baby,
+    color: "from-pink-500 to-rose-400",
+    image:
+      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&crop=center",
+    features: [
+      "Consultas adaptadas para niños",
+      "Tratamientos preventivos infantiles",
+      "Selladores de fisuras pediátricos",
+      "Educación en higiene oral",
+    ],
+    highlight: "Experiencia sin miedo ni dolor",
   },
   {
     title: "Prevención Integral",

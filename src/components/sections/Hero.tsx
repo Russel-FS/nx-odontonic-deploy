@@ -70,7 +70,7 @@ export default function Hero() {
                 target="_blank"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 bg-[#0e5d88] text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-[#0a4a6b] transition-all duration-300 shadow-2xl hover:shadow-3xl shadow-[#0e5d88]/50"
+                className="inline-flex items-center gap-3 bg-[#0e5d88] text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-[#0a4a6b] hover:text-white transition-all duration-300 shadow-2xl hover:shadow-3xl shadow-[#0e5d88]/50"
               >
                 <Phone className="h-6 w-6" />
                 Agendar por WhatsApp
