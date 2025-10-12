@@ -36,7 +36,7 @@ const posts = [
     desc: "Nuestra paciente Sofía Cavero, modelo y actriz, confía en Go! Odontic para cuidar su sonrisa profesional.",
   },
   {
-    name: "Joa & Geraldine - Amaya Hermanos",
+    name: "Joa Geraldine - Amaya Hermanos",
     image: "/blog/joa-geraldine.png",
     desc: "Parte del grupo Amaya Hermanos, visitaron Go! Odontic para sus revisiones dentales.",
   },
