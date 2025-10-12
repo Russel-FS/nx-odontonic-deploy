@@ -20,7 +20,7 @@ const Logo = ({
   className = "",
 }: LogoProps) => {
   return (
-    <div className={`inline-flex flex-col items-center  ${className}`}>
+    <div className={`inline-flex flex-col items-center   ${className}`}>
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -33,7 +33,7 @@ const Logo = ({
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="200 120 624 260"
+          viewBox="250 100 524 500"
           className="w-full h-full"
         >
           <motion.path
