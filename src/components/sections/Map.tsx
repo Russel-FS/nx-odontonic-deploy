@@ -5,39 +5,44 @@ import { site } from "@/config/site.config";
 import { motion } from "framer-motion";
 import { MapPin, Navigation, Car, Clock } from "lucide-react";
 
-function getMapSrc(value: string) {
-  if (!value) return "";
+/**
+ * Acepta:
+ * - URL embed oficial: https://www.google.com/maps/embed?pb=...
+ * - Short links: https://maps.app.goo.gl/... o https://goo.gl/maps/...
+ * - Dirección normal: "Duque de la Torre 130, Lima 15049, Perú"
+ * - Coordenadas: "-12.1375,-77.0198" o "-12.1375, -77.0198"
+ */
+function getMapSrc(value: string, coords?: string, zoom = 16) {
+  if (!value && !coords) return "";
+
   // Si ya es un embed oficial, úsalo tal cual
-  if (value.includes("/maps/embed?")) return value;
-  // Si es una dirección o una URL de búsqueda, generamos un embed válido
-  return `https://www.google.com/maps?q=${encodeURIComponent(
-    value
-  )}&output=embed`;
+  if (value && /google\.com\/maps\/embed\?/.test(value)) return value.trim();
+
+  // Si vienen coordenadas "lat,lng" → forzamos pin con loc:
+  if (coords && /^-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?$/.test(coords.trim())) {
+    const [lat, lng] = coords.split(",").map(s => s.trim());
+    return `https://www.google.com/maps?q=loc:${lat},${lng}&z=${zoom}&output=embed`;
+  }
+
+  // Si es una URL de Google Maps (short link o normal), embébelo como búsqueda
+  if (value && /https?:\/\/(maps\.app\.goo\.gl|goo\.gl\/maps|google\.[^/]+\/maps)/.test(value)) {
+    return `https://www.google.com/maps?q=${encodeURIComponent(value)}&output=embed`;
+  }
+
+  // Dirección como texto
+  return `https://www.google.com/maps?q=${encodeURIComponent(value)}&output=embed`;
 }
 
+
 const directions = [
-  {
-    icon: Car,
-    title: "En auto",
-    desc: "Estacionamiento disponible en la zona",
-    color: "from-blue-500 to-cyan-400",
-  },
-  {
-    icon: Navigation,
-    title: "Transporte público",
-    desc: "Múltiples líneas de bus cercanas",
-    color: "from-emerald-500 to-teal-400",
-  },
-  {
-    icon: Clock,
-    title: "Tiempo promedio",
-    desc: "15-20 min desde el centro",
-    color: "from-amber-500 to-orange-400",
-  },
+  { icon: Car,        title: "En auto",            desc: "Estacionamiento disponible en la zona", color: "from-blue-500 to-cyan-400" },
+  { icon: Navigation, title: "Transporte público", desc: "Múltiples líneas de bus cercanas",      color: "from-emerald-500 to-teal-400" },
+  { icon: Clock,      title: "Tiempo promedio",    desc: "15-20 min desde el centro",             color: "from-amber-500 to-orange-400" },
 ];
 
 export default function Map() {
-  const src = getMapSrc(site.googleMap);
+  const src = getMapSrc(site.googleMap, site.googleCoords, 16);
+
 
   return (
     <Section className="bg-gradient-to-b from-white to-gray-50/50">
@@ -48,7 +53,7 @@ export default function Map() {
         />
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {/* Directions Info */}
+          {/* Lado izquierdo: info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,25 +85,19 @@ export default function Map() {
                     viewport={{ once: true }}
                     className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
                   >
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-br ${direction.color} rounded-xl flex items-center justify-center flex-shrink-0`}
-                    >
+                    <div className={`w-12 h-12 bg-gradient-to-br ${direction.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
                       <IconComponent className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900">
-                        {direction.title}
-                      </h4>
-                      <p className="text-sm text-gray-600 font-light">
-                        {direction.desc}
-                      </p>
+                      <h4 className="font-medium text-gray-900">{direction.title}</h4>
+                      <p className="text-sm text-gray-600 font-light">{direction.desc}</p>
                     </div>
                   </motion.div>
                 );
               })}
             </div>
 
-            {/* Address Card */}
+            {/* Tarjeta con dirección */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -112,15 +111,13 @@ export default function Map() {
                 </div>
                 <div>
                   <h4 className="font-medium mb-2">Nuestra dirección</h4>
-                  <p className="font-light opacity-90 leading-relaxed">
-                    {site.address}
-                  </p>
+                  <p className="font-light opacity-90 leading-relaxed">{site.address}</p>
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Map */}
+          {/* Mapa */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -132,6 +129,7 @@ export default function Map() {
               {src ? (
                 <iframe
                   src={src}
+                  title="Ubicación en Google Maps"
                   className="w-full h-full"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -144,18 +142,13 @@ export default function Map() {
                       <MapPin className="h-8 w-8 text-gray-500" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-medium text-gray-700 mb-2">
-                        Mapa no disponible
-                      </h4>
-                      <p className="text-gray-500 font-light">
-                        Próximamente integraremos el mapa interactivo
-                      </p>
+                      <h4 className="text-lg font-medium text-gray-700 mb-2">Mapa no disponible</h4>
+                      <p className="text-gray-500 font-light">Próximamente integraremos el mapa interactivo</p>
                     </div>
                   </div>
                 </div>
               )}
-
-              {/* Overlay gradient */}
+              {/* Overlay suave */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
             </div>
           </motion.div>
