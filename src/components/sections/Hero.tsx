@@ -6,21 +6,9 @@ import { site } from "@/config/site.config";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const varaiantes = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
-
 export default function Hero() {
   return (
-    <motion.section
-      id="inicio"
-      className="relative"
-      initial="hidden"
-      whileInView="visible"
-      variants={varaiantes}
-      viewport={{ once: true }}
-    >
+    <section id="inicio" className="relative">
       <div className="relative h-[60vh] w-full">
         <Image
           src="/hero.jpg"
@@ -58,6 +46,6 @@ export default function Hero() {
           </div>
         </Container>
       </div>
-    </motion.section>
+    </section>
   );
 }

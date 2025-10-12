@@ -13,10 +13,10 @@ export const site = {
   whatsapp: "https://wa.me/clinicadentalgoodontic",
   googleMap: "Duque de la Torre 130, Lima 15049, Perú",
   nav: [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Nosotros", href: "#nosotros" },
-    { label: "Servicios", href: "#servicios" },
-    { label: "Blog", href: "#blog" },      // placeholder (opcional)
-    { label: "Contacto", href: "#contacto" },
+    { label: "Inicio", href: "/" },
+    { label: "Nosotros", href: "/about" },
+    { label: "Servicios", href: "/services" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contacto", href: "/contact" },
   ],
 };
