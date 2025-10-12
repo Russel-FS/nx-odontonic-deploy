@@ -105,7 +105,6 @@ const fadeInUp = {
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Ultra Minimal Apple Style */}
       <section className="relative overflow-hidden bg-gradient-to-b from-gray-50/50 to-white">
         <Container>
           <div className="pt-40 pb-32 text-center">
@@ -136,7 +135,6 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Services Section - Card Grid Apple Style */}
       <section className="py-32 bg-white">
         <Container>
           <div className="max-w-7xl mx-auto">
@@ -165,7 +163,6 @@ export default function ServicesPage() {
                         index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                       }`}
                     >
-                      {/* Content */}
                       <div
                         className={`space-y-10 ${
                           index % 2 === 1 ? "lg:col-start-2" : ""
@@ -191,12 +188,10 @@ export default function ServicesPage() {
                             </div>
                           </div>
 
-                          {/* Description */}
                           <p className="text-xl text-gray-600 font-light leading-relaxed">
                             {service.desc}
                           </p>
 
-                          {/* Highlight Badge */}
                           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0e5d88]/10 to-blue-500/10 px-6 py-3 rounded-full border border-[#0e5d88]/20">
                             <CheckCircle className="h-5 w-5 text-[#0e5d88]" />
                             <span className="text-[#0e5d88] font-medium">
@@ -226,7 +221,6 @@ export default function ServicesPage() {
                           ))}
                         </div>
 
-                        {/* CTA */}
                         <motion.button
                           whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
@@ -237,7 +231,6 @@ export default function ServicesPage() {
                         </motion.button>
                       </div>
 
-                      {/* Image */}
                       <div
                         className={`${
                           index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
@@ -270,7 +263,6 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* CTA Section - Minimal & Elegant */}
       <section className="py-32 bg-gradient-to-b from-white to-gray-50/50">
         <Container>
           <motion.div
@@ -280,7 +272,6 @@ export default function ServicesPage() {
             className="text-center max-w-5xl mx-auto"
           >
             <div className="relative">
-              {/* Background Blur Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#0e5d88]/5 via-blue-500/5 to-[#0e5d88]/5 rounded-[4rem] blur-3xl" />
 
               <div className="relative bg-white/80 backdrop-blur-xl rounded-[4rem] p-16 md:p-20 border border-gray-200/50 shadow-2xl">
