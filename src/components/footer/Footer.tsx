@@ -1,6 +1,6 @@
 "use client";
 import Container from "@/components/ui/Container";
-import { site } from "@/config/site.config";
+import { site } from "../../config/site.config";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -15,7 +15,7 @@ import Logo from "../icons/Logo";
 const socialIcons = {
   instagram: Instagram,
   facebook: Facebook,
-  tiktok: MessageCircle, // Using MessageCircle as placeholder for TikTok
+  tiktok: MessageCircle, 
 };
 
 export default function Footer() {

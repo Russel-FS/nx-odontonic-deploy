@@ -1,7 +1,7 @@
 "use client";
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { site } from "@/config/site.config";
+import { site } from "../../config/site.config";
 import { motion } from "framer-motion";
 import { MapPin, Navigation, Car, Clock } from "lucide-react";
 
