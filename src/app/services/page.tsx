@@ -1,10 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { Sparkles, Smile, Heart, Zap, Scissors } from "lucide-react";
+import {
+  Sparkles,
+  Smile,
+  Heart,
+  Zap,
+  Scissors,
+  ArrowRight,
+} from "lucide-react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
-import SectionTitle from "@/components/ui/SectionTitle";
 
 const services = [
   {
@@ -97,25 +103,36 @@ const itemVariants = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <Section className="pt-24 pb-16">
+    <main className="min-h-screen bg-white">
+      <Section className="pt-32 pb-20">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <SectionTitle
-              title="Nuestros Servicios"
-              subtitle="Ofrecemos una gama completa de tratamientos dentales con la más alta calidad y tecnología de vanguardia."
-            />
+            <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+              Nuestros
+              <span className="block font-medium bg-gradient-to-r from-[#0e5d88] to-[#1a73a8] bg-clip-text text-transparent">
+                Servicios
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
+              Experiencia dental excepcional con tecnología de vanguardia y
+              atención personalizada
+            </p>
           </motion.div>
+        </Container>
+      </Section>
 
+      <Section className="py-20">
+        <Container>
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid gap-8 lg:gap-12 mt-16"
+            className="grid gap-16 max-w-7xl mx-auto"
           >
             {services.map((service, index) => {
               const IconComponent = service.icon;
@@ -123,89 +140,138 @@ export default function ServicesPage() {
                 <motion.div
                   key={service.title}
                   variants={itemVariants}
-                  className={`flex flex-col lg:flex-row items-center gap-8 ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  className={`grid lg:grid-cols-2 gap-12 items-center ${
+                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                   }`}
                 >
-                  <div className="flex-1 lg:max-w-lg">
-                    <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="p-3 bg-brand.blue/10 rounded-2xl">
-                          <IconComponent className="h-8 w-8 text-brand.blue" />
+                  {/* Content */}
+                  <div
+                    className={`space-y-8 ${
+                      index % 2 === 1 ? "lg:col-start-2" : ""
+                    }`}
+                  >
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#0e5d88] to-[#1a73a8] rounded-2xl flex items-center justify-center shadow-lg">
+                          <IconComponent className="h-8 w-8 text-white" />
                         </div>
-                        <h2 className="text-2xl font-bold text-brand.dark">
-                          {service.title}
-                        </h2>
+                        <div>
+                          <h2 className="text-3xl font-medium text-gray-900 tracking-tight">
+                            {service.title}
+                          </h2>
+                        </div>
                       </div>
 
-                      <p className="text-slate-600 mb-6 leading-relaxed">
+                      <p className="text-lg text-gray-600 leading-relaxed font-light">
                         {service.desc}
                       </p>
-
-                      <div className="space-y-3">
-                        <h3 className="font-semibold text-brand.dark mb-3">
-                          Incluye:
-                        </h3>
-                        {service.features.map((feature, featureIndex) => (
-                          <motion.div
-                            key={feature}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{
-                              delay: 0.3 + featureIndex * 0.1,
-                              duration: 0.3,
-                            }}
-                            className="flex items-center gap-3"
-                          >
-                            <div className="w-2 h-2 bg-brand.blue rounded-full" />
-                            <span className="text-sm text-slate-600">
-                              {feature}
-                            </span>
-                          </motion.div>
-                        ))}
-                      </div>
                     </div>
+
+                    {/* Features */}
+                    <div className="space-y-4">
+                      {service.features.map((feature, featureIndex) => (
+                        <motion.div
+                          key={feature}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            delay: 0.4 + featureIndex * 0.1,
+                            duration: 0.5,
+                          }}
+                          className="flex items-center gap-4 group"
+                        >
+                          <div className="w-2 h-2 bg-[#0e5d88] rounded-full group-hover:scale-125 transition-transform duration-200" />
+                          <span className="text-gray-700 font-light">
+                            {feature}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center gap-2 bg-[#0e5d88] text-white px-6 py-3 rounded-full font-medium hover:bg-[#0a4a6b] transition-all duration-200 shadow-lg hover:shadow-xl"
+                    >
+                      Más información
+                      <ArrowRight className="h-4 w-4" />
+                    </motion.button>
                   </div>
 
-                  <div className="flex-1 lg:max-w-md">
-                    <div className="rounded-3xl overflow-hidden shadow-lg bg-slate-200 min-h-[320px] lg:min-h-[384px]">
+                  <div
+                    className={`${
+                      index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                    }`}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3]"
+                    >
                       <Image
                         src={service.image}
                         alt={service.title}
-                        width={400}
-                        height={320}
-                        className="w-full h-80 lg:h-96 object-cover"
+                        fill
+                        className="object-cover"
                         unoptimized
                       />
-                    </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                    </motion.div>
                   </div>
                 </motion.div>
               );
             })}
           </motion.div>
+        </Container>
+      </Section>
 
+      {/* CTA Section */}
+      <Section className="py-24">
+        <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-center mt-16"
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="text-center"
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-brand.dark mb-4">
-                ¿Necesitas más información?
-              </h3>
-              <p className="text-slate-600 mb-6">
-                Agenda una consulta personalizada y descubre el tratamiento
-                ideal para ti.
-              </p>
-              <motion.a
-                href="#contacto"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block bg-brand.blue text-white px-8 py-3 rounded-lg font-medium hover:bg-brand.dark transition-colors"
-              >
-                Agendar Consulta
-              </motion.a>
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-[#0e5d88] to-[#1a73a8] rounded-[2.5rem] p-12 md:p-16 text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-32 translate-x-32" />
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-24 -translate-x-24" />
+                </div>
+
+                <div className="relative z-10 space-y-8">
+                  <h3 className="text-3xl md:text-4xl font-medium tracking-tight">
+                    ¿Listo para transformar tu sonrisa?
+                  </h3>
+                  <p className="text-xl font-light opacity-90 max-w-2xl mx-auto leading-relaxed">
+                    Agenda una consulta personalizada y descubre el tratamiento
+                    ideal para ti con nuestro equipo de especialistas.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                    <motion.a
+                      href="#contacto"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-3 bg-white text-[#0e5d88] px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all duration-200 shadow-lg"
+                    >
+                      Agendar Consulta
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.a>
+
+                    <motion.a
+                      href="tel:+1234567890"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-3 border-2 border-white/30 text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all duration-200"
+                    >
+                      Llamar ahora
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </Container>
