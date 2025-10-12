@@ -4,17 +4,16 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-        colors: {
-            brand: {
-            blue: "#0A4FA3",
-            dark: "#002C6B",
-            gold: "#F4C430",
-            // opcionales para estados
-            blue50: "#E9F1FB",
-            },
+      colors: {
+        brand: {
+          blue: "#0A4FA3",
+          dark: "#002C6B",
+          gold: "#F4C430",
+          blue50: "#E9F1FB",
         },
-        container: { center: true, padding: "1rem" },
-        }
+      },
+      container: { center: true, padding: "1rem" },
+    },
   },
   plugins: [],
 };

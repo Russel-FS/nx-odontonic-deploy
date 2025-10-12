@@ -6,6 +6,7 @@ import Container from "../ui/Container";
 import { useEffect, useState } from "react";
 import { MenuIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../icons/Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,22 +23,13 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100 shadow-sm">
-      <Container className="flex items-center justify-between h-16">
+      <Container className="flex items-center justify-between h-20">
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex items-center "
           aria-label={site.shortName}
         >
-          <Image
-            src="/logo.png"
-            alt={site.shortName}
-            width={36}
-            height={36}
-            priority
-          />
-          <span className="font-semibold text-brand.dark">
-            {site.shortName}
-          </span>
+          <Logo></Logo>
         </Link>
 
         {/* Desktop */}
