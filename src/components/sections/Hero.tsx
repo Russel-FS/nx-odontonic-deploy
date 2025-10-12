@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { site } from "@/config/site.config";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const varaiantes = {
   hidden: { opacity: 0 },
@@ -48,11 +49,11 @@ export default function Hero() {
                   Agendar por WhatsApp
                 </Button>
               </a>
-              <a href="#servicios">
+              <Link href="services" className="ml-3">
                 <Button data-variant="outline" data-size="lg">
                   Ver servicios
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </Container>
