@@ -1,11 +1,25 @@
+"use client";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { site } from "@/config/site.config";
+import { motion } from "framer-motion";
+
+const varaiantes = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative">
+    <motion.section
+      id="inicio"
+      className="relative"
+      initial="hidden"
+      whileInView="visible"
+      variants={varaiantes}
+      viewport={{ once: true }}
+    >
       <div className="relative h-[60vh] w-full">
         <Image
           src="/hero.jpg"
@@ -17,9 +31,13 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/35" />
         <Container className="absolute inset-0 flex items-center">
           <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl font-bold drop-shadow-sm">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-5xl font-bold drop-shadow-sm"
+            >
               Sonríe con Go! Odontic
-            </h1>
+            </motion.h1>
             <p className="mt-3 text-white/90">
               Especialistas en ortodoncia, estética e implantes. Agenda tu cita
               hoy mismo.
@@ -39,6 +57,6 @@ export default function Hero() {
           </div>
         </Container>
       </div>
-    </section>
+    </motion.section>
   );
 }
