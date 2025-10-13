@@ -2,6 +2,7 @@
 import Container from "@/components/ui/Container";
 import { site } from "../../config/site.config";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   MapPin,
   Phone,
@@ -11,11 +12,12 @@ import {
   Heart,
 } from "lucide-react";
 import Logo from "../icons/Logo";
+import TikTokIcon from "../icons/TikTokIcon";
 
 const socialIcons = {
   instagram: Instagram,
   facebook: Facebook,
-  tiktok: MessageCircle,
+  tiktok: TikTokIcon,
 };
 
 export default function Footer() {
@@ -73,13 +75,13 @@ export default function Footer() {
               <ul className="space-y-3">
                 {site.nav.map((item) => (
                   <li key={item.href}>
-                    <a
+                    <Link
                       href={item.href}
                       className="text-white/70 hover:text-white font-light transition-colors duration-200 flex items-center group"
                     >
                       <span className="w-0 group-hover:w-2 h-0.5 bg-white mr-0 group-hover:mr-3 transition-all duration-200" />
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
