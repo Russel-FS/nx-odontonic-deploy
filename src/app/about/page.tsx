@@ -1,9 +1,10 @@
 "use client";
 import Container from "@/components/ui/Container";
 import { motion } from "framer-motion";
-import { Target, Eye, ArrowRight } from "lucide-react";
+import { Target, Eye, ArrowRight, Heart, Award, Users } from "lucide-react";
 import { site } from "@/config/site.config";
 import Link from "next/link";
+import Image from "next/image";
 
 const stats = [
   { number: "17", label: "Años de trayectoria" },
@@ -13,14 +14,17 @@ const stats = [
 
 const values = [
   {
+    icon: Heart,
     title: "Cuidado humano",
     desc: "Cada paciente recibe atención personalizada con calidez y comprensión.",
   },
   {
+    icon: Award,
     title: "Excelencia clínica",
     desc: "Búsqueda constante de la perfección en cada procedimiento.",
   },
   {
+    icon: Users,
     title: "Resultados duraderos",
     desc: "Soluciones efectivas que mantienen tu sonrisa saludable por años.",
   },
@@ -51,66 +55,103 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Story Section */}
+      {/* Story Section with Banner */}
       <section className="py-32 bg-white">
         <Container>
-          <div className="max-w-6xl mx-auto">
-            {/* Main Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-20"
-            >
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-8 leading-tight">
-                Nuestra historia
-              </h2>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+              {/* Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="space-y-8"
+              >
+                <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
+                  Nuestra historia
+                </h2>
 
-              <div className="space-y-8 max-w-4xl mx-auto">
-                <p className="text-xl text-gray-600 font-light leading-relaxed">
-                  En GO Odontic, creemos que una sonrisa puede cambiarlo todo.
-                  Somos una clínica dental moderna, dedicada a cuidar tu salud
-                  bucal con atención personalizada y un equipo apasionado por
-                  verte sonreír con confianza.
-                </p>
+                <div className="space-y-6">
+                  <p className="text-xl text-gray-600 font-light leading-relaxed">
+                    En GO Odontic, creemos que una sonrisa puede cambiarlo todo.
+                    Somos una clínica dental moderna, dedicada a cuidar tu salud
+                    bucal con atención personalizada y un equipo apasionado por
+                    verte sonreír con confianza.
+                  </p>
 
-                <p className="text-lg text-gray-600 font-light leading-relaxed">
-                  Tu mejor sonrisa empieza aquí, en un espacio donde la
-                  odontología se vive con empatía, precisión y resultados
-                  reales. Desde el primer diagnóstico hasta el último detalle
-                  estético, trabajamos con dedicación y calidez para que cada
-                  visita sea una experiencia agradable y transformadora.
-                </p>
-              </div>
-            </motion.div>
+                  <p className="text-lg text-gray-600 font-light leading-relaxed">
+                    Tu mejor sonrisa empieza aquí, en un espacio donde la
+                    odontología se vive con empatía, precisión y resultados
+                    reales. Desde el primer diagnóstico hasta el último detalle
+                    estético, trabajamos con dedicación y calidez para que cada
+                    visita sea una experiencia agradable y transformadora.
+                  </p>
+                </div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-3 gap-12 max-w-2xl mx-auto mb-20"
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="text-3xl md:text-4xl font-light text-gray-900 mb-2">
-                    {stat.number}
+                {/* Stats inline */}
+                <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-100">
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="text-center"
+                    >
+                      <div className="text-2xl font-light text-[#0e5d88] mb-1">
+                        {stat.number}
+                      </div>
+                      <div className="text-sm text-gray-600 font-light">
+                        {stat.label}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Banner Visual */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="relative bg-gradient-to-br from-[#0e5d88] to-[#1a73a8] rounded-3xl p-12 text-white text-center shadow-2xl overflow-hidden">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-400 rounded-full translate-y-12 -translate-x-12"></div>
                   </div>
-                  <div className="text-sm text-gray-600 font-light">
-                    {stat.label}
+
+                  <div className="relative space-y-6">
+                    <div className="space-y-4">
+                      <h3 className="text-4xl md:text-5xl font-bold tracking-tight">
+                        SONRISA
+                      </h3>
+                      <div className="text-2xl md:text-3xl font-bold text-yellow-400">
+                        GO ODONTIC
+                      </div>
+                      {/* Smile curve */}
+                      <div className="flex justify-center">
+                        <div className="w-16 h-8 border-b-4 border-white rounded-full opacity-60"></div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <p className="text-xl md:text-2xl font-light">
+                        TU MEJOR SONRISA
+                      </p>
+                      <p className="text-xl md:text-2xl font-light">
+                        EMPIEZA AQUÍ
+                      </p>
+                    </div>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </Container>
       </section>
@@ -126,7 +167,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8"
+                className="bg-white rounded-2xl p-8 shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-[#0e5d88]/10 rounded-xl flex items-center justify-center">
@@ -149,7 +190,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8"
+                className="bg-white rounded-2xl p-8 shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-[#25D366]/10 rounded-xl flex items-center justify-center">
@@ -196,24 +237,78 @@ export default function About() {
               viewport={{ once: true }}
               className="grid md:grid-cols-3 gap-12"
             >
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <h3 className="text-xl font-medium text-gray-900 mb-4">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 font-light leading-relaxed">
-                    {value.desc}
-                  </p>
-                </motion.div>
-              ))}
+              {values.map((value, index) => {
+                const IconComponent = value.icon;
+                return (
+                  <motion.div
+                    key={value.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-center group"
+                  >
+                    <div className="w-16 h-16 bg-[#0e5d88]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#0e5d88] transition-colors duration-300">
+                      <IconComponent className="h-8 w-8 text-[#0e5d88] group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <h3 className="text-xl font-medium text-gray-900 mb-4">
+                      {value.title}
+                    </h3>
+                    <p className="text-gray-600 font-light leading-relaxed">
+                      {value.desc}
+                    </p>
+                  </motion.div>
+                );
+              })}
             </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Team Preview Banner */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 to-white">
+        <Container>
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gradient-to-r from-[#0e5d88] via-[#1a73a8] to-[#0e5d88] rounded-3xl p-12 md:p-16 text-white text-center relative overflow-hidden">
+              {/* Background Elements */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-1/4 w-40 h-40 bg-white rounded-full -translate-y-20"></div>
+                <div className="absolute bottom-0 right-1/4 w-32 h-32 bg-yellow-400 rounded-full translate-y-16"></div>
+                <div className="absolute top-1/2 right-0 w-24 h-24 bg-white rounded-full translate-x-12"></div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative space-y-8"
+              >
+                <div className="space-y-4">
+                  <h3 className="text-4xl md:text-5xl font-light">
+                    Conoce a nuestro equipo
+                  </h3>
+                  <p className="text-xl font-light opacity-90 max-w-3xl mx-auto">
+                    Especialistas certificados con años de experiencia,
+                    dedicados a brindarte el mejor cuidado dental con tecnología
+                    de vanguardia
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Link href="/services">
+                    <motion.button
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-3 bg-white text-[#0e5d88] px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-50 transition-all duration-300 shadow-lg"
+                    >
+                      Ver nuestros servicios
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.button>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </Container>
       </section>
