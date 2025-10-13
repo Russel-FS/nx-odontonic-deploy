@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { number: "17", label: "Años de experiencia" },
-  { number: "12K+", label: "Pacientes atendidos" },
+  { number: "1K +", label: "Pacientes atendidos" },
   { number: "98%", label: "Satisfacción" },
 ];
 

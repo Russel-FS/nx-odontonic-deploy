@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const stats = [
   { number: "17", label: "Años de trayectoria" },
-  { number: "12K+", label: "Pacientes atendidos" },
+  { number: "1K +", label: "Pacientes atendidos" },
   { number: "98%", label: "Satisfacción" },
 ];
 
