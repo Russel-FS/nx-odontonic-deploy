@@ -110,7 +110,7 @@ export default function Trust() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <Link href="/blog">
+            <Link href="/pacientes">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
