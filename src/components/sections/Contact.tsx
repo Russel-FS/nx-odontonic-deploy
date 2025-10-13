@@ -260,9 +260,13 @@ export default function Contact() {
                         Horarios de atención
                       </h4>
                       <div className="space-y-1 text-sm text-gray-600 font-light">
-                        <p>Lunes - Viernes: 8:00 AM - 7:00 PM</p>
-                        <p>Sábados: 8:00 AM - 2:00 PM</p>
-                        <p>Domingos: Cerrado</p>
+                        <p>Lunes: 9:00 AM - 9:00 PM</p>
+                        <p>Martes: 5:00 PM - 10:00 PM</p>
+                        <p>Miércoles: 5:00 PM - 10:00 PM</p>
+                        <p>Jueves: 5:00 PM - 10:00 PM</p>
+                        <p>Viernes: 5:00 PM - 6:00 PM</p>
+                        <p>Sábado: 7:00 AM - 7:00 PM</p>
+                        <p>Domingo: 9:00 AM - 6:00 PM</p>
                       </div>
                     </div>
                   </div>
