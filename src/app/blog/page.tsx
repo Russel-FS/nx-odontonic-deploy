@@ -8,7 +8,7 @@ const posts = [
   {
     name: "Wampi",
     category: "Música Urbana",
-    image: "/blog/wampi.png",
+    image: "/blog/wampi.webp",
     desc: "El cantante urbano confía en Go Odontic para mantener su sonrisa siempre lista para el escenario.",
   },
   {
@@ -20,7 +20,7 @@ const posts = [
   {
     name: "Manuel Donayre",
     category: "Música Criolla",
-    image: "/blog/manuel-donayre.png",
+    image: "/blog/manuel-donayre-2.webp",
     desc: "El 'Diamante Negro' de la música criolla confía en nuestro equipo para su cuidado dental.",
   },
   {
