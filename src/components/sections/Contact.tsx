@@ -3,8 +3,73 @@ import Container from "@/components/ui/Container";
 import { site } from "@/config/site.config";
 import { motion } from "framer-motion";
 import { Phone, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validar campos requeridos
+    if (!formData.name.trim()) {
+      alert("Por favor ingresa tu nombre");
+      return;
+    }
+
+    if (!formData.phone.trim()) {
+      alert("Por favor ingresa tu teléfono");
+      return;
+    }
+
+    if (!formData.message.trim()) {
+      alert("Por favor ingresa tu mensaje");
+      return;
+    }
+
+    // Crear mensaje para WhatsApp
+    let whatsappMessage = `¡Hola! Me gustaría agendar una cita.\n\n`;
+    whatsappMessage += `*Nombre:* ${formData.name}\n`;
+    whatsappMessage += `*Teléfono:* ${formData.phone}\n`;
+
+    if (formData.email.trim()) {
+      whatsappMessage += `*Email:* ${formData.email}\n`;
+    }
+
+    whatsappMessage += `*Mensaje:* ${formData.message}\n\n`;
+    whatsappMessage += `Enviado desde la web de GO Odontic`;
+
+    // Crear URL de WhatsApp
+    const whatsappURL = `https://wa.me/51903072982?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    // Abrir WhatsApp
+    window.open(whatsappURL, "_blank");
+
+    // Limpiar formulario
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  };
   return (
     <section id="contacto" className="py-32 bg-gray-50">
       <Container>
@@ -40,18 +105,22 @@ export default function Contact() {
                       Envíanos un mensaje
                     </h3>
                     <p className="text-gray-600 font-light">
-                      Completa el formulario y nos pondremos en contacto contigo
+                      Completa el formulario y te contactaremos por WhatsApp
                     </p>
                   </div>
 
-                  <form className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-gray-700">
-                        Nombre completo
+                        Nombre completo *
                       </label>
                       <input
                         type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
                         placeholder="Tu nombre completo"
+                        required
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0e5d88] focus:ring-2 focus:ring-[#0e5d88]/20 transition-all duration-200"
                       />
                     </div>
@@ -59,20 +128,28 @@ export default function Contact() {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700">
-                          Teléfono
+                          Teléfono *
                         </label>
                         <input
                           type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
                           placeholder="Tu teléfono"
+                          required
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0e5d88] focus:ring-2 focus:ring-[#0e5d88]/20 transition-all duration-200"
                         />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700">
-                          Email
+                          Email{" "}
+                          <span className="text-gray-400">(opcional)</span>
                         </label>
                         <input
                           type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
                           placeholder="tu@email.com"
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0e5d88] focus:ring-2 focus:ring-[#0e5d88]/20 transition-all duration-200"
                         />
@@ -81,27 +158,32 @@ export default function Contact() {
 
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-gray-700">
-                        Mensaje
+                        Mensaje *
                       </label>
                       <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
                         placeholder="Cuéntanos cómo podemos ayudarte..."
                         rows={4}
+                        required
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0e5d88] focus:ring-2 focus:ring-[#0e5d88]/20 transition-all duration-200 resize-none"
                       />
                     </div>
 
                     <motion.button
-                      type="button"
+                      type="submit"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full inline-flex items-center justify-center gap-3 bg-[#0e5d88] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#0a4a6b] transition-all duration-300"
+                      className="w-full inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#20b858] transition-all duration-300"
                     >
-                      <Send className="h-5 w-5" />
-                      Enviar mensaje
+                      <MessageCircle className="h-5 w-5" />
+                      Enviar por WhatsApp
                     </motion.button>
 
                     <p className="text-xs text-gray-500 text-center">
-                      * Formulario ilustrativo. Para agendar citas usa WhatsApp
+                      * Campos obligatorios. Tu mensaje se enviará directamente
+                      por WhatsApp
                     </p>
                   </form>
                 </div>
