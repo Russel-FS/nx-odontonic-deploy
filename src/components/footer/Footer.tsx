@@ -15,7 +15,7 @@ import Logo from "../icons/Logo";
 const socialIcons = {
   instagram: Instagram,
   facebook: Facebook,
-  tiktok: MessageCircle, 
+  tiktok: MessageCircle,
 };
 
 export default function Footer() {

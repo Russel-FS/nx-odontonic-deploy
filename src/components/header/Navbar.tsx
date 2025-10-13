@@ -85,7 +85,7 @@ export default function Navbar() {
               transition={{ duration: 0.4, delay: 0.5 }}
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-[#0e5d88] text-white px-6 py-3 rounded-full font-medium hover:bg-[#0a4a6b] transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 bg-[#0e5d88] hover:text-white text-white px-6 py-3 rounded-full font-medium hover:bg-[#0a4a6b] transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <Phone className="h-4 w-4" />
               Agendar cita
