@@ -3,7 +3,7 @@ import Container from "@/components/ui/Container";
 import { motion } from "framer-motion";
 
 const stats = [
-  { number: "15+", label: "Años de experiencia" },
+  { number: "17", label: "Años de experiencia" },
   { number: "12K+", label: "Pacientes atendidos" },
   { number: "98%", label: "Satisfacción" },
 ];

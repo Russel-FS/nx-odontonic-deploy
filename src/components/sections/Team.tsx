@@ -81,7 +81,7 @@ export default function Team() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             <div className="text-center">
-              <div className="text-3xl font-light text-[#0e5d88] mb-2">15+</div>
+              <div className="text-3xl font-light text-[#0e5d88] mb-2">17</div>
               <div className="text-sm text-gray-600 font-light">
                 Años de experiencia
               </div>
