@@ -1,6 +1,7 @@
 "use client";
 import Container from "@/components/ui/Container";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const stats = [
   { number: "17", label: "Años de experiencia" },
@@ -63,44 +64,57 @@ export default function About() {
             viewport={{ once: true }}
             className="grid md:grid-cols-3 gap-12"
           >
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#0e5d88]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-6 h-6 bg-[#0e5d88] rounded-full"></div>
-              </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
-                Tecnología avanzada
-              </h3>
-              <p className="text-gray-600 font-light leading-relaxed">
-                Equipos de última generación para diagnósticos precisos y
-                tratamientos cómodos.
-              </p>
-            </div>
+            {[
+              {
+                title: "Tecnología avanzada",
+                desc: "Equipos de última generación para diagnósticos precisos y tratamientos cómodos.",
+                image:
+                  "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop&crop=center",
+              },
+              {
+                title: "Atención personalizada",
+                desc: "Cada tratamiento se adapta a tus necesidades específicas y expectativas.",
+                image:
+                  "https://images.unsplash.com/photo-1588776814546-daab20739e9b?w=400&h=300&fit=crop&crop=center",
+              },
+              {
+                title: "Resultados duraderos",
+                desc: "Soluciones efectivas que mantienen tu sonrisa saludable por años.",
+                image:
+                  "https://images.unsplash.com/photo-1445527815219-ecb5b6ad0f85?w=400&h=300&fit=crop&crop=center",
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                {/* Image */}
+                <div className="relative h-48 rounded-2xl overflow-hidden bg-gray-100 mb-6 group-hover:shadow-lg transition-shadow duration-300">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+                </div>
 
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#25D366]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-6 h-6 bg-[#25D366] rounded-full"></div>
-              </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
-                Atención personalizada
-              </h3>
-              <p className="text-gray-600 font-light leading-relaxed">
-                Cada tratamiento se adapta a tus necesidades específicas y
-                expectativas.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#0e5d88]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="w-6 h-6 bg-[#0e5d88] rounded-full"></div>
-              </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
-                Resultados duraderos
-              </h3>
-              <p className="text-gray-600 font-light leading-relaxed">
-                Soluciones efectivas que mantienen tu sonrisa saludable por
-                años.
-              </p>
-            </div>
+                {/* Content */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-medium text-gray-900">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 font-light leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </Container>
