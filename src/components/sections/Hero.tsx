@@ -3,7 +3,7 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { site } from "@/config/site.config";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -25,65 +25,77 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <Container className="relative z-10">
-        <div className="text-center text-white max-w-5xl mx-auto">
+      <Container className="relative z-10 h-screen flex items-center">
+        <div className="max-w-2xl">
           <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.6, -0.05, 0.01, 0.99] }}
-            className="space-y-12"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="space-y-12 text-white"
           >
             {/* Main Title */}
             <div className="space-y-6">
               <motion.h1
-                className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-[1.1]"
-                initial={{ opacity: 0, y: 40 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[0.9]"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                transition={{ duration: 1, delay: 0.4 }}
               >
-                Tu sonrisa perfecta
+                <span className="block">Sonríe con</span>
                 <span className="block font-extralight text-white/90">
-                  empieza aquí
+                  confianza
                 </span>
               </motion.h1>
 
               <motion.p
-                className="text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto text-white/90"
-                initial={{ opacity: 0, y: 30 }}
+                className="text-xl md:text-2xl font-light text-white/90 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
               >
-                Odontología moderna con tecnología avanzada y cuidado humano
-                excepcional
+                Cuidado dental excepcional que transforma sonrisas y vidas con
+                resultados que perduran.
               </motion.p>
             </div>
 
-            {/* CTA Buttons */}
+            {/* Trust Indicators */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="flex flex-wrap gap-8 text-sm text-white/70"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span>17 años de trayectoria</span>
+              </div>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+              className="flex flex-col sm:flex-row gap-4"
             >
               <motion.a
                 href={site.whatsapp}
                 target="_blank"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 bg-[#0e5d88] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#0a4a6b] transition-all duration-300 shadow-lg"
+                className="inline-flex items-center justify-center gap-3 bg-white text-gray-900 px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-gray-50 hover:shadow-xl transition-all duration-300 shadow-lg"
               >
-                <Phone className="h-5 w-5" />
-                Agendar por WhatsApp
+                Agenda tu consulta
+                <ArrowRight className="h-5 w-5" />
               </motion.a>
 
               <Link href="/services">
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-3 border-2 border-white/30 text-white px-10 py-5 rounded-2xl text-lg font-medium hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
                 >
-                  Ver servicios
-                  <ArrowRight className="h-5 w-5" />
+                  Conocer más
                 </motion.button>
               </Link>
             </motion.div>
@@ -99,7 +111,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="w-6 h-10 border border-white/30 rounded-full flex justify-center"
         >
