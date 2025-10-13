@@ -18,7 +18,7 @@ const trustedClients = [
   {
     name: "Monica Adaro",
     category: "Actriz y Cantante",
-    image: "/blog/monica-adaro.png",
+    image: "/blog/monica-adaro.webp",
   },
   {
     name: "Mister Perú 2024",

@@ -26,7 +26,7 @@ const posts = [
   {
     name: "Monica Adaro",
     category: "Actriz y Cantante",
-    image: "/blog/monica-adaro.png",
+    image: "/blog/monica-adaro.webp",
     desc: "La reconocida actriz y cantante peruana visitó Go Odontic para su tratamiento de estética dental.",
   },
   {
