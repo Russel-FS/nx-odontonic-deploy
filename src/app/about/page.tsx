@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Target, Eye, ArrowRight, Heart, Award, Users } from "lucide-react";
 import { site } from "@/config/site.config";
 import Link from "next/link";
-import Image from "next/image";
 
 const stats = [
   { number: "17", label: "Años de trayectoria" },
