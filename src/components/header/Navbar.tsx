@@ -62,17 +62,17 @@ export default function Navbar() {
             aria-label="Menú principal"
           >
             {site.nav.map((item, index) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative text-gray-700 hover:text-[#0e5d88] font-light transition-colors duration-200 py-2 group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0e5d88] group-hover:w-full transition-all duration-300" />
-              </motion.a>
+              <Link key={item.href} href={item.href}>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="relative text-gray-700 hover:text-[#0e5d88] font-light transition-colors duration-200 py-2 group cursor-pointer"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0e5d88] group-hover:w-full transition-all duration-300" />
+                </motion.div>
+              </Link>
             ))}
 
             {/* CTA Button */}
@@ -141,17 +141,17 @@ export default function Navbar() {
             <Container>
               <div className="py-6 space-y-4">
                 {site.nav.map((item, index) => (
-                  <motion.a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="block py-3 px-4 text-gray-700 hover:text-[#0e5d88] hover:bg-gray-50 rounded-xl transition-all duration-200 font-light"
-                  >
-                    {item.label}
-                  </motion.a>
+                  <Link key={item.href} href={item.href}>
+                    <motion.div
+                      onClick={() => setOpen(false)}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className="block py-3 px-4 text-gray-700 hover:text-[#0e5d88] hover:bg-gray-50 rounded-xl transition-all duration-200 font-light cursor-pointer"
+                    >
+                      {item.label}
+                    </motion.div>
+                  </Link>
                 ))}
 
                 <motion.a
