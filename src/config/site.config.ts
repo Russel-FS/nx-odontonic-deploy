@@ -18,6 +18,7 @@ export const site = {
     { label: "Inicio", href: "/" },
     { label: "Nosotros", href: "/about" },
     { label: "Servicios", href: "/services" },
+    { label: "Pacientes", href: "/pacientes" },
     { label: "Contacto", href: "#contacto" },
   ],
 };

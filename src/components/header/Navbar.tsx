@@ -6,10 +6,19 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../icons/Logo";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const filteredNav = site.nav.filter((item) => {
+    if (pathname !== "/" && item.href === "#contacto") {
+      return false;
+    }
+    return true;
+  });
 
   // Handle scroll effect
   useEffect(() => {
@@ -61,7 +70,7 @@ export default function Navbar() {
             role="navigation"
             aria-label="Menú principal"
           >
-            {site.nav.map((item, index) => (
+            {filteredNav.map((item, index) => (
               <Link key={item.href} href={item.href}>
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -140,7 +149,7 @@ export default function Navbar() {
           >
             <Container>
               <div className="py-6 space-y-4">
-                {site.nav.map((item, index) => (
+                {filteredNav.map((item, index) => (
                   <Link key={item.href} href={item.href}>
                     <motion.div
                       onClick={() => setOpen(false)}
