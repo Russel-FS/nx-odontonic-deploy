@@ -75,13 +75,13 @@ export default function About() {
                 title: "Atención personalizada",
                 desc: "Cada tratamiento se adapta a tus necesidades específicas y expectativas.",
                 image:
-                  "https://images.unsplash.com/photo-1588776814546-daab20739e9b?w=400&h=300&fit=crop&crop=center",
+                  "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=300&fit=crop&crop=center",
               },
               {
                 title: "Resultados duraderos",
                 desc: "Soluciones efectivas que mantienen tu sonrisa saludable por años.",
                 image:
-                  "https://images.unsplash.com/photo-1445527815219-ecb5b6ad0f85?w=400&h=300&fit=crop&crop=center",
+                  "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop&crop=center",
               },
             ].map((feature, index) => (
               <motion.div
