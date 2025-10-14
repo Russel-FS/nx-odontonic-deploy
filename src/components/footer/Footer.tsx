@@ -10,6 +10,7 @@ import {
   Instagram,
   Facebook,
   Heart,
+  LucideYoutube,
 } from "lucide-react";
 import Logo from "../icons/Logo";
 import TikTokIcon from "../icons/TikTokIcon";
@@ -18,6 +19,7 @@ const socialIcons = {
   instagram: Instagram,
   facebook: Facebook,
   tiktok: TikTokIcon,
+  youtube: LucideYoutube,
 };
 
 export default function Footer() {
