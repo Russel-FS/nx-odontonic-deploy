@@ -15,7 +15,7 @@ const patients = [
   {
     name: "Pepito Menis",
     category: "Grupo 5",
-    image: "/blog/pepito-menis.png",
+    image: "/blog/pepito-menis.webp",
     desc: "Integrante de Grupo 5 nos visitó para su control dental y limpieza profesional.",
   },
   {
@@ -33,43 +33,43 @@ const patients = [
   {
     name: "Kelly Dávila",
     category: "Artista y Modelo",
-    image: "/blog/kelly-davila.png",
+    image: "/blog/kelly-davila.webp",
     desc: "Artista y modelo mantiene su sonrisa impecable con nuestros tratamientos personalizados.",
   },
   {
     name: "Sofía Cavero",
     category: "Modelo y Actriz",
-    image: "/blog/sofia-cavero.png",
+    image: "/blog/sofia-cavero.webp",
     desc: "Modelo y actriz confía en Go Odontic para cuidar su sonrisa profesional.",
   },
   {
     name: "Joa Geraldine",
     category: "Amaya Hermanos",
-    image: "/blog/joa-geraldine.png",
+    image: "/blog/joa-geraldine.webp",
     desc: "Parte del grupo Amaya Hermanos visitó Go Odontic para sus revisiones dentales.",
   },
   {
     name: "Paolo Camacho",
     category: "Yo Soy",
-    image: "/blog/gianmarco.png",
+    image: "/blog/gianmarco.webp",
     desc: "El imitador de Gian Marco agradeció a Go Odontic por su atención y profesionalismo.",
   },
   {
     name: "Mister Perú 2024",
     category: "Concurso Nacional",
-    image: "/blog/mister-peru.png",
+    image: "/blog/mister-peru.webp",
     desc: "El representante de la belleza masculina peruana eligió Go Odontic para cuidar su sonrisa.",
   },
   {
     name: "Miss Teen Lima Norte",
     category: "Concurso Regional",
-    image: "/blog/miss-teen-lima-norte.png",
+    image: "/blog/miss-teen-lima-norte.webp",
     desc: "Miss Teen Lima Norte 2024 confía en Go Odontic para su cuidado dental.",
   },
   {
     name: "Miss Teen Región Lima",
     category: "Concurso Regional",
-    image: "/blog/miss-teen-region-lima.png",
+    image: "/blog/miss-teen-region-lima.webp",
     desc: "Miss Teen Región Lima 2024 visitó la clínica para su control dental y estética de sonrisa.",
   },
 ];
@@ -159,18 +159,22 @@ export default function Pacientes() {
                       <p className="text-lg text-gray-600 font-light leading-relaxed">
                         {patient.desc}
                       </p>
-                    
+
                       {patient.url && (
-                        <a href={patient.url} target="_blank" rel="noopener noreferrer"
-                        className="inline-block mt-4 pt-5">
-                        <motion.div
-                        whileHover={{ x: 4 }}
-                        className="inline-flex items-center gap-2 text-[#0e5d88] font-medium group-hover:gap-3 transition-all duration-200"
+                        <a
+                          href={patient.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block mt-4 pt-5"
                         >
-                        <span>Ver más</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </motion.div>
-                      </a>
+                          <motion.div
+                            whileHover={{ x: 4 }}
+                            className="inline-flex items-center gap-2 text-[#0e5d88] font-medium group-hover:gap-3 transition-all duration-200"
+                          >
+                            <span>Ver más</span>
+                            <ArrowRight className="h-4 w-4" />
+                          </motion.div>
+                        </a>
                       )}
                     </div>
                   </div>
