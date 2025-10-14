@@ -15,7 +15,7 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/hero.jpg"
+          src="/hero.webp"
           alt="Consultorio dental moderno"
           fill
           priority

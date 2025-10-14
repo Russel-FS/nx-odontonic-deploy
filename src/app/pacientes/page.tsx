@@ -10,6 +10,7 @@ const patients = [
     category: "Música Urbana",
     image: "/blog/wampi.webp",
     desc: "El cantante urbano confía en Go Odontic para mantener su sonrisa siempre lista para el escenario.",
+    url: "https://youtu.be/jVYuUVfg2Fk?si=Kp6O6yeIz7v7u1M6",
   },
   {
     name: "Pepito Menis",
@@ -158,14 +159,19 @@ export default function Pacientes() {
                       <p className="text-lg text-gray-600 font-light leading-relaxed">
                         {patient.desc}
                       </p>
-
-                      <motion.div
+                    
+                      {patient.url && (
+                        <a href={patient.url} target="_blank" rel="noopener noreferrer"
+                        className="inline-block mt-4 pt-5">
+                        <motion.div
                         whileHover={{ x: 4 }}
                         className="inline-flex items-center gap-2 text-[#0e5d88] font-medium group-hover:gap-3 transition-all duration-200"
-                      >
+                        >
                         <span>Ver más</span>
                         <ArrowRight className="h-4 w-4" />
                       </motion.div>
+                      </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>
