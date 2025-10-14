@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 interface LogoProps {
   size?: number;
   showBrandText?: boolean;
-  showSubText?: boolean;
   brandTextSize?: number;
-  subTextSize?: number;
   className?: string;
   darkMode?: boolean;
 }
@@ -15,16 +13,13 @@ interface LogoProps {
 const Logo = ({
   size = 45,
   showBrandText = true,
-  showSubText = true,
   brandTextSize = 12,
-  subTextSize = 7,
   className = "",
   darkMode,
 }: LogoProps) => {
   const fondo_svg = darkMode ? "#0e5d88" : "white";
   const icon_color = darkMode ? "white" : "#0e5d88";
   const text_color = darkMode ? "white" : "#0e5d88";
-  const subtext_color = darkMode ? "#f0b31d" : "#f0b31d";
   return (
     <div className={`inline-flex flex-col items-center   ${className}`}>
       <motion.div
@@ -75,26 +70,6 @@ const Logo = ({
           >
             Go Odontic
           </h1>
-        </motion.div>
-      )}
-
-      {/* Texto Consultorio Dental */}
-      {showSubText && (
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="text-center"
-        >
-          <p
-            className="font-bold tracking-wider uppercase"
-            style={{
-              fontSize: `${subTextSize}px`,
-              color: subtext_color,
-            }}
-          >
-            Consultorio Dental
-          </p>
         </motion.div>
       )}
     </div>
