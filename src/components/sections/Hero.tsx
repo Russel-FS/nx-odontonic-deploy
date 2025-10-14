@@ -85,7 +85,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-3 bg-white text-gray-900 px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-gray-50 hover:shadow-xl transition-all duration-300 shadow-lg"
               >
-                Empieza Agendar tu consulta
+                Agenda tu consulta
                 <ArrowRight className="h-5 w-5" />
               </motion.a>
 
