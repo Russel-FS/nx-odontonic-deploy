@@ -20,6 +20,7 @@ export const site = {
     { label: "Nosotros", href: "/about" },
     { label: "Servicios", href: "/services" },
     { label: "Pacientes", href: "/pacientes" },
+    { label: "Convenios", href: "/convenios" },
     { label: "Contacto", href: "#contacto" },
   ],
 };
