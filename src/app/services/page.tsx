@@ -7,44 +7,47 @@ import { site } from "@/config/site.config";
 
 const services = [
   {
-    title: "Estética Dental",
-    desc: "Blanqueamiento, carillas y resinas para una sonrisa radiante y natural que refleje tu mejor versión.",
+    title: "Estética Dental y Rehabilitación Oral",
+    desc: "Transformamos tu sonrisa con tratamientos estéticos avanzados y rehabilitación oral completa para devolver función y belleza a tus dientes.",
     image:
       "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop&crop=center",
     features: [
       "Blanqueamiento láser profesional",
       "Carillas de porcelana ultrafinas",
       "Resinas estéticas de última generación",
+      "Rehabilitación oral completa",
+      "Prótesis fijas y removibles",
       "Diseño digital de sonrisa personalizado",
     ],
   },
   {
     title: "Ortodoncia",
-    desc: "Alineación perfecta con brackets tradicionales o alineadores invisibles para una sonrisa armoniosa.",
+    desc: "Alineación perfecta con brackets tradicionales o alineadores invisibles para una sonrisa armoniosa y funcional.",
     image:
       "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&crop=center",
     features: [
       "Brackets metálicos y estéticos",
-      "Alineadores invisibles Invisalign",
+      "Alineadores invisibles",
       "Ortodoncia interceptiva para niños",
-      "Retención post-tratamiento garantizada",
+      "Ortodoncia correctiva para adultos",
     ],
   },
   {
-    title: "Implantes Dentales",
-    desc: "Reemplazo de piezas dentales con tecnología de vanguardia y materiales premium de por vida.",
+    title: "Periodoncia e Implantes Dentales",
+    desc: "Tratamiento integral de encías y reemplazo de piezas dentales con implantes de última generación para una sonrisa completa.",
     image:
       "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop&crop=center",
     features: [
-      "Implantes de titanio premium",
+      "Tratamiento de gingivitis y periodontitis",
+      "Cirugía periodontal regenerativa",
+      "Injertos de encía especializados",
       "Cirugía guiada por computadora",
-      "Carga inmediata cuando es posible",
       "Prótesis sobre implantes personalizadas",
     ],
   },
   {
-    title: "Endodoncia",
-    desc: "Tratamiento de conductos con microscopía y tecnología rotatoria para preservar tus dientes naturales.",
+    title: "Endodoncia Rotatoria",
+    desc: "Tratamiento de conductos con tecnología rotatoria avanzada y microscopía para preservar tus dientes naturales con máxima precisión.",
     image:
       "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop&crop=center",
     features: [
@@ -52,30 +55,31 @@ const services = [
       "Microscopía dental avanzada",
       "Retratamientos especializados",
       "Técnicas mínimamente invasivas",
+      "Obturación termoplástica",
     ],
   },
   {
-    title: "Odontopediatría",
-    desc: "Atención especializada para el cuidado dental de los más pequeños en un ambiente amigable.",
-    image:
-      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&crop=center",
-    features: [
-      "Consultas adaptadas para niños",
-      "Tratamientos preventivos infantiles",
-      "Selladores de fisuras pediátricos",
-      "Educación en higiene oral divertida",
-    ],
-  },
-  {
-    title: "Periodoncia",
-    desc: "Salud integral de encías y tejidos de soporte dental para una base sólida y saludable.",
+    title: "Cirugía Dental y Urgencias Dentales",
+    desc: "Procedimientos quirúrgicos especializados y atención de urgencias dentales las 24 horas para resolver cualquier emergencia.",
     image:
       "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&h=600&fit=crop&crop=center",
     features: [
-      "Tratamiento de gingivitis y periodontitis",
-      "Cirugía periodontal regenerativa",
-      "Injertos de encía especializados",
-      "Mantenimiento periodontal continuo",
+      "Extracciones simples y complejas",
+      "Cirugía de terceras molares",
+      "Frenectomías especializadas",
+      "Cirugía oral menor",
+    ],
+  },
+  {
+    title: "Radiografía Dental",
+    desc: "Diagnóstico preciso con tecnología radiográfica digital avanzada para planificar el mejor tratamiento para cada paciente.",
+    image: "/services/radiografia-dental.webp",
+    features: [
+      "Radiografías panorámicas digitales",
+      "Radiografías periapicales de alta resolución",
+      "Diagnóstico radiográfico especializado",
+      "Menor radiación con tecnología digital",
+      "Resultados inmediatos",
     ],
   },
 ];

@@ -68,14 +68,12 @@ export default function About() {
               {
                 title: "Tecnología avanzada",
                 desc: "Equipos de última generación para diagnósticos precisos y tratamientos cómodos.",
-                image:
-                  "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop&crop=center",
+                image: "/services/tecnologia-avanzada.webp",
               },
               {
                 title: "Atención personalizada",
                 desc: "Cada tratamiento se adapta a tus necesidades específicas y expectativas.",
-                image:
-                  "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=300&fit=crop&crop=center",
+                image: "/services/atencion-personalizada.webp",
               },
               {
                 title: "Resultados duraderos",
@@ -93,7 +91,7 @@ export default function About() {
                 className="text-center group"
               >
                 {/* Image */}
-                <div className="relative h-48 rounded-2xl overflow-hidden bg-gray-100 mb-6 group-hover:shadow-lg transition-shadow duration-300">
+                <div className="relative h-52 rounded-sm overflow-hidden bg-gray-100 mb-6 group-hover:shadow-lg transition-shadow duration-300">
                   <Image
                     src={feature.image}
                     alt={feature.title}
