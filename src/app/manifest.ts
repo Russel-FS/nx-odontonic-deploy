@@ -2,10 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Go Odontic - Clínica Dental",
+    name: "Go Odontic - Consultorio Dental",
     short_name: "Go Odontic",
     description:
-      "Clínica dental especializada en Surco. Ortodoncia, estética dental, implantes y más.",
+      "Consultorio dental especializado en Surco. Ortodoncia, estética dental, implantes y más.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

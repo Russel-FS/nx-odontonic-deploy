@@ -14,7 +14,7 @@ const stats = [
 
 const banner = {
   title: "Nuestros valores",
-  desc: "Comprometidos con la excelencia clínica y la atención personalizada.",
+  desc: "Comprometidos con la excelencia profesional y la atención personalizada.",
   image: "/banner/hero-banner.webp",
 };
 
@@ -26,7 +26,7 @@ const values = [
   },
   {
     icon: Award,
-    title: "Excelencia clínica",
+    title: "Excelencia profesional",
     desc: "Búsqueda constante de la perfección en cada procedimiento.",
   },
   {
@@ -81,9 +81,9 @@ export default function About() {
                 <div className="space-y-6">
                   <p className="text-xl text-gray-600 font-light leading-relaxed">
                     En GO Odontic, creemos que una sonrisa puede cambiarlo todo.
-                    Somos una clínica dental moderna, dedicada a cuidar tu salud
-                    bucal con atención personalizada y un equipo apasionado por
-                    verte sonreír con confianza.
+                    Somos un consultorio dental moderno, dedicado a cuidar tu
+                    salud bucal con atención personalizada y un equipo
+                    apasionado por verte sonreír con confianza.
                   </p>
 
                   <p className="text-lg text-gray-600 font-light leading-relaxed">
@@ -158,7 +158,7 @@ export default function About() {
                   <h3 className="text-2xl font-light text-gray-900">Misión</h3>
                 </div>
                 <p className="text-gray-600 font-light leading-relaxed">
-                  Brindar servicios odontológicos de alta calidad, combinando
+                  Ofrecer atención odontológica de alta calidad, combinando
                   experiencia profesional y atención personalizada. Queremos que
                   cada paciente disfrute una experiencia cómoda y positiva,
                   recuperando su confianza a través de una sonrisa sana y
@@ -181,8 +181,8 @@ export default function About() {
                   <h3 className="text-2xl font-light text-gray-900">Visión</h3>
                 </div>
                 <p className="text-gray-600 font-light leading-relaxed">
-                  Ser reconocidos como una clínica dental líder en excelencia y
-                  cercanía humana. Aspiramos a transformar la forma en que las
+                  Ser reconocidos como un consultorio dental líder en excelencia
+                  y cercanía humana. Aspiramos a transformar la forma en que las
                   personas viven la odontología, creando una comunidad que
                   valore la prevención y el orgullo de sonreír.
                 </p>

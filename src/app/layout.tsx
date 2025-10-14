@@ -6,11 +6,12 @@ import LayoutClient from "@/components/shared/LayoutClient";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Go Odontic - Clínica Dental en Surco | Ortodoncia, Estética Dental",
+  title:
+    "Go Odontic - Consultorio Dental en Surco | Ortodoncia, Estética Dental",
   description:
-    "Clínica dental especializada en Surco. Ortodoncia, estética dental, implantes, blanqueamiento y más. Agenda tu cita por WhatsApp. Atención personalizada y tecnología de vanguardia.",
+    "Consultorio dental especializado en Surco. Ortodoncia, estética dental, implantes, blanqueamiento y más. Agenda tu cita por WhatsApp. Atención personalizada y tecnología de vanguardia.",
   keywords: [
-    "clínica dental surco",
+    "consultorio dental surco",
     "ortodoncia lima",
     "estética dental",
     "implantes dentales",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Go Odontic - Clínica Dental en Surco",
+    title: "Go Odontic - Consultorio Dental en Surco",
     description:
       "Odontología integral en Surco: ortodoncia, estética, implantes y más. Agenda tu cita por WhatsApp.",
     url: "https://goodontic.com",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
         url: "/hero.webp",
         width: 1200,
         height: 630,
-        alt: "Go Odontic - Clínica Dental",
+        alt: "Go Odontic - Consultorio Dental",
       },
     ],
     locale: "es_PE",
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Go Odontic - Clínica Dental en Surco",
+    title: "Go Odontic - Consultorio Dental en Surco",
     description:
       "Odontología integral en Surco: ortodoncia, estética, implantes y más.",
     images: ["/hero.webp"],

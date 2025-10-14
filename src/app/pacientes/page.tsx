@@ -71,7 +71,7 @@ const patients = [
     name: "Miss Teen Región Lima",
     category: "Concurso Regional",
     image: "/blog/miss-teen-region-lima.webp",
-    desc: "Miss Teen Región Lima 2024 visitó la clínica para su control dental y estética de sonrisa.",
+    desc: "Miss Teen Región Lima 2024 visitó el consultorio para su control dental y estética de sonrisa.",
     url: "https://youtube.com/shorts/tBfCUcLwc10?si=ug5acErpRrjui0K9",
   },
 ];

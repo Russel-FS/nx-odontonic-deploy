@@ -78,7 +78,7 @@ const Logo = ({
         </motion.div>
       )}
 
-      {/* Texto Clínica Dental */}
+      {/* Texto Consultorio Dental */}
       {showSubText && (
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -93,7 +93,7 @@ const Logo = ({
               color: subtext_color,
             }}
           >
-            Clínica Dental
+            Consultorio Dental
           </p>
         </motion.div>
       )}
