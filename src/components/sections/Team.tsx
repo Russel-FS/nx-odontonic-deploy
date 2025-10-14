@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: "Dr. Beethoven Durero Ponce Oscco",
     specialty: "Implantología Oral",
-    image: null,
+    image: "/teams/dr-beethoven-durero.webp",
     credentials: [
       "Egresado de UNMSM",
       "Especialidad de Implantología Oral",
