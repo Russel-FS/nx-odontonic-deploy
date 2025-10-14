@@ -10,7 +10,6 @@ const patients = [
     category: "Música Urbana",
     image: "/blog/wampi.webp",
     desc: "El cantante urbano confía en Go Odontic para mantener su sonrisa siempre lista para el escenario.",
-    url: "https://youtu.be/jVYuUVfg2Fk?si=Kp6O6yeIz7v7u1M6",
   },
   {
     name: "Pepito Menis",
@@ -29,6 +28,7 @@ const patients = [
     category: "Actriz y Cantante",
     image: "/blog/monica-adaro.webp",
     desc: "La reconocida actriz y cantante peruana visitó Go Odontic para su tratamiento de estética dental.",
+    url: "https://youtu.be/jVYuUVfg2Fk?si=Kp6O6yeIz7v7u1M6",
   },
   {
     name: "Kelly Dávila",
@@ -65,12 +65,14 @@ const patients = [
     category: "Concurso Regional",
     image: "/blog/miss-teen-lima-norte.webp",
     desc: "Miss Teen Lima Norte 2024 confía en Go Odontic para su cuidado dental.",
+    url: "https://youtube.com/shorts/sWtzmoMqpjs?si=ckqLMzqKoShHq19W",
   },
   {
     name: "Miss Teen Región Lima",
     category: "Concurso Regional",
     image: "/blog/miss-teen-region-lima.webp",
     desc: "Miss Teen Región Lima 2024 visitó la clínica para su control dental y estética de sonrisa.",
+    url: "https://youtube.com/shorts/tBfCUcLwc10?si=ug5acErpRrjui0K9",
   },
 ];
 
