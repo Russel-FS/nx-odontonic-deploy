@@ -23,17 +23,17 @@ const trustedClients = [
   {
     name: "Mister Perú 2024",
     category: "Concurso Nacional",
-    image: "/blog/mister-peru.png",
+    image: "/blog/mister-peru.webp",
   },
   {
     name: "Miss Teen Lima Norte",
     category: "Concurso Regional",
-    image: "/blog/miss-teen-lima-norte.png",
+    image: "/blog/miss-teen-lima-norte.webp",
   },
   {
     name: "Sofía Cavero",
     category: "Modelo y Actriz",
-    image: "/blog/sofia-cavero.png",
+    image: "/blog/sofia-cavero.webp",
   },
 ];
 
