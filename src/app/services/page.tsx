@@ -88,14 +88,14 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-white">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 bg-white">
         <Container>
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-6 md:space-y-8"
             >
               <h1 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
                 Servicios especializados
@@ -110,10 +110,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-32 bg-white">
+      <section className="py-16 md:py-32 bg-white">
         <Container>
           <div className="max-w-6xl mx-auto">
-            <div className="space-y-20">
+            <div className="space-y-12 md:space-y-20">
               {services.map((service, index) => (
                 <motion.div
                   key={service.title}
@@ -123,43 +123,45 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   className={`flex flex-col ${
                     index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  } gap-12 md:gap-16 items-center`}
+                  } gap-8 md:gap-12 lg:gap-16 items-center`}
                 >
                   {/* Image Section */}
-                  <div className="md:w-1/2">
+                  <div className="w-full md:w-1/2">
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
-                      className="relative h-80 md:h-96 rounded-2xl overflow-hidden bg-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                      className="relative w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden bg-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300"
                     >
                       <Image
                         src={service.image}
                         alt={service.title}
                         fill
-                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover w-full h-full"
                         unoptimized
+                        priority={index < 2}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                     </motion.div>
                   </div>
 
                   {/* Content Section */}
-                  <div className="md:w-1/2 space-y-8">
-                    <div className="space-y-4">
-                      <h3 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight">
+                  <div className="md:w-1/2 space-y-6 md:space-y-8">
+                    <div className="space-y-3 md:space-y-4">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
                         {service.title}
                       </h3>
-                      <p className="text-xl text-gray-600 font-light leading-relaxed">
+                      <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed">
                         {service.desc}
                       </p>
                     </div>
 
                     {/* Features */}
-                    <div className="space-y-4">
-                      <h4 className="text-lg font-medium text-gray-900">
+                    <div className="space-y-3 md:space-y-4">
+                      <h4 className="text-base md:text-lg font-medium text-gray-900">
                         Tratamientos incluidos
                       </h4>
-                      <div className="space-y-3">
+                      <div className="space-y-2 md:space-y-3">
                         {service.features.map((feature, featureIndex) => (
                           <motion.div
                             key={featureIndex}
@@ -187,7 +189,7 @@ export default function ServicesPage() {
                       target="_blank"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center gap-3 text-[#0e5d88] hover:text-gray-900 font-light text-lg transition-colors duration-200 group"
+                      className="inline-flex items-center gap-3 text-[#0e5d88] hover:text-gray-900 font-light text-base md:text-lg transition-colors duration-200 group"
                     >
                       Consultar este servicio
                       <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -201,7 +203,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-white">
+      <section className="py-16 md:py-32 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -210,15 +212,15 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
+            <div className="space-y-6 md:space-y-8">
+              <div className="space-y-4 md:space-y-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
                   ¿Listo para tu
                   <span className="block text-gray-600 font-extralight">
                     nueva sonrisa?
                   </span>
                 </h2>
-                <p className="text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
                   Agenda una consulta personalizada y descubre cómo podemos
                   transformar tu sonrisa con nuestros tratamientos
                   especializados
@@ -231,7 +233,7 @@ export default function ServicesPage() {
                   target="_blank"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center gap-3 bg-[#0e5d88] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#0a4a6b] transition-colors duration-200"
+                  className="inline-flex items-center gap-3 bg-[#0e5d88] text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium hover:bg-[#0a4a6b] transition-colors duration-200"
                 >
                   Agendar consulta
                   <ArrowRight className="h-5 w-5" />
@@ -241,7 +243,7 @@ export default function ServicesPage() {
                   href="tel:+51987654321"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center gap-3 border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-50 transition-colors duration-200"
+                  className="inline-flex items-center gap-3 border-2 border-gray-300 text-gray-700 px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium hover:bg-gray-50 transition-colors duration-200"
                 >
                   Llamar ahora
                 </motion.a>
