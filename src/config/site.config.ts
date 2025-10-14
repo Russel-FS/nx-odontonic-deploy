@@ -1,8 +1,8 @@
 export const site = {
-  name: "Go Odontic - Consultorio Dental",
+  name: "Go Odontic - ",
   shortName: "Go Odontic",
   description:
-    "Consultorio dental en Santiago de Surco. Especialidades odontológicas, atención por especialistas y agendamiento por WhatsApp.",
+    "Odontología en Santiago de Surco. Especialidades odontológicas, atención por especialistas y agendamiento por WhatsApp.",
   phone: "+51 903 072 982",
   address: "Duque de la Palata 130, Lima 15049, Perú",
   socials: {

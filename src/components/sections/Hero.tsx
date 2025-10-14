@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/hero.webp"
-          alt="Consultorio dental moderno"
+          alt="Dental"
           fill
           priority
           className="object-cover object-center"

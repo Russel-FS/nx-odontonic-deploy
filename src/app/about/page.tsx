@@ -81,7 +81,7 @@ export default function About() {
                 <div className="space-y-6">
                   <p className="text-xl text-gray-600 font-light leading-relaxed">
                     En GO Odontic, creemos que una sonrisa puede cambiarlo todo.
-                    Somos un consultorio dental moderno, dedicado a cuidar tu
+                    Somos un moderno centro odontológico, dedicado a cuidar tu
                     salud bucal con atención personalizada y un equipo
                     apasionado por verte sonreír con confianza.
                   </p>
@@ -181,10 +181,10 @@ export default function About() {
                   <h3 className="text-2xl font-light text-gray-900">Visión</h3>
                 </div>
                 <p className="text-gray-600 font-light leading-relaxed">
-                  Ser reconocidos como un consultorio dental líder en excelencia
-                  y cercanía humana. Aspiramos a transformar la forma en que las
-                  personas viven la odontología, creando una comunidad que
-                  valore la prevención y el orgullo de sonreír.
+                  Ser reconocidos como un líder en excelencia y cercanía humana.
+                  Aspiramos a transformar la forma en que las personas viven la
+                  odontología, creando una comunidad que valore la prevención y
+                  el orgullo de sonreír.
                 </p>
               </motion.div>
             </div>
