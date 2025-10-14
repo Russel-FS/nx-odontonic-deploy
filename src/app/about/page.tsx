@@ -4,12 +4,19 @@ import { motion } from "framer-motion";
 import { Target, Eye, ArrowRight, Heart, Award, Users } from "lucide-react";
 import { site } from "@/config/site.config";
 import Link from "next/link";
+import Image from "next/image";
 
 const stats = [
   { number: "17", label: "Años de trayectoria" },
   { number: "1K +", label: "Pacientes atendidos" },
   { number: "98%", label: "Satisfacción" },
 ];
+
+const banner = {
+  title: "Nuestros valores",
+  desc: "Comprometidos con la excelencia clínica y la atención personalizada.",
+  image: "/banner/hero-banner.webp",
+};
 
 const values = [
   {
@@ -58,14 +65,14 @@ export default function About() {
       <section className="py-32 bg-white">
         <Container>
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="grid lg:grid-cols-2 gap-16 items-center mb-20  ">
               {/* Content */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="space-y-8"
+                className="space-y-8 "
               >
                 <h2 className="text-4xl md:text-5xl font-light text-gray-900 leading-tight">
                   Nuestra historia
@@ -116,39 +123,15 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="relative"
+                className="relative md:flex hidden overflow-hidden h-[480px]  "
               >
-                <div className="relative bg-gradient-to-br from-[#0e5d88] to-[#1a73a8] rounded-3xl p-12 text-white text-center shadow-2xl overflow-hidden">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-400 rounded-full translate-y-12 -translate-x-12"></div>
-                  </div>
-
-                  <div className="relative space-y-6">
-                    <div className="space-y-4">
-                      <h3 className="text-4xl md:text-5xl font-bold tracking-tight">
-                        SONRISA
-                      </h3>
-                      <div className="text-2xl md:text-3xl font-bold text-yellow-400">
-                        GO ODONTIC
-                      </div>
-                      {/* Smile curve */}
-                      <div className="flex justify-center">
-                        <div className="w-16 h-8 border-b-4 border-white rounded-full opacity-60"></div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <p className="text-xl md:text-2xl font-light">
-                        TU MEJOR SONRISA
-                      </p>
-                      <p className="text-xl md:text-2xl font-light">
-                        EMPIEZA AQUÍ
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  height={100}
+                  width={400}
+                  src={banner.image}
+                  alt="Banner"
+                  className="object-cover  rounded-2xl"
+                />
               </motion.div>
             </div>
           </div>
