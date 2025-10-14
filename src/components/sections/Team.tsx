@@ -64,47 +64,55 @@ export default function Team() {
             </p>
           </motion.div>
 
-          {/* Team Cards - Horizontal Layout */}
-          <div className="space-y-16 mb-20">
+          {/* Team Cards */}
+          <div className="space-y-20 mb-20">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`flex flex-col ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } gap-8 md:gap-12 items-center`}
+                className={`grid md:grid-cols-2 gap-12 md:gap-16 items-center ${
+                  index % 2 === 1 ? "md:grid-flow-col-dense" : ""
+                }`}
               >
                 {/* Image Section */}
-                <div className="md:w-1/2">
-                  <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden bg-gray-100 hover:shadow-lg transition-shadow duration-300">
-                    {member.image ? (
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                        priority={true}
-                      />
-                    ) : (
-                      <div className="flex items-center justify-center h-full bg-[#0e5d88]/10">
-                        <div className="w-32 h-32 bg-[#0e5d88] rounded-2xl flex items-center justify-center">
-                          <span className="text-white font-medium text-4xl">
-                            {member.name.split(" ")[1]?.[0] || "D"}
-                          </span>
+                <div className={`${index % 2 === 1 ? "md:col-start-2" : ""}`}>
+                  <div className="relative w-full max-w-sm mx-auto">
+                    <div className="relative h-80 md:h-96 rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-center"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority={index === 0}
+                        />
+                      ) : (
+                        <div className="flex items-center justify-center h-full bg-gray-100">
+                          <div className="w-32 h-32 bg-[#0e5d88] rounded-lg flex items-center justify-center">
+                            <span className="text-white font-medium text-4xl">
+                              {member.name.split(" ")[1]?.[0] || "D"}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="md:w-1/2 space-y-6">
+                <div
+                  className={`space-y-8 ${
+                    index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""
+                  }`}
+                >
+                  {/* Header */}
                   <div className="space-y-4">
-                    <div>
-                      <p className="text-[#0e5d88] font-medium mb-2">
+                    <div className="space-y-2">
+                      <p className="text-[#0e5d88] font-medium text-sm tracking-wide uppercase">
                         {member.specialty}
                       </p>
                       <h3 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight">
@@ -114,18 +122,25 @@ export default function Team() {
                   </div>
 
                   {/* Credentials */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-medium text-gray-900">
-                      Formación y experiencia
+                  <div className="space-y-6">
+                    <h4 className="text-lg font-medium text-gray-900 border-b border-gray-100 pb-3">
+                      Formación académica y profesional
                     </h4>
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       {member.credentials.map((credential, credIndex) => (
-                        <div key={credIndex} className="flex items-start gap-3">
-                          <div className="w-1.5 h-1.5 bg-[#0e5d88] rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-sm text-gray-600 font-light leading-relaxed">
+                        <motion.div
+                          key={credIndex}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: credIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex items-start gap-4"
+                        >
+                          <div className="w-2 h-2 bg-[#0e5d88] rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-gray-700 leading-relaxed">
                             {credential}
                           </p>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
@@ -142,7 +157,7 @@ export default function Team() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
+            <div className="bg-gray-50 border border-gray-100 rounded-lg p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-6">
                 Formación de excelencia
               </h3>
@@ -153,12 +168,27 @@ export default function Team() {
               </p>
 
               {/* Institution badges */}
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600 font-light">
-                <span>• UNMSM</span>
-                <span>• Universidad Castello Branco Brasil</span>
-                <span>• SPPDMF</span>
-                <span>• APPO</span>
-                <span>• ASPIOI</span>
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  UNMSM
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  Universidad Castello Branco Brasil
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  SPPDMF
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  APPO
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  ASPIOI
+                </span>
               </div>
             </div>
           </motion.div>
