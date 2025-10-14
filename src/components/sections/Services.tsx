@@ -6,28 +6,28 @@ import Link from "next/link";
 
 const services = [
   {
+    title: "Estética Dental y Rehabilitación Oral",
+    desc: "Transformamos tu sonrisa con tratamientos estéticos avanzados y rehabilitación oral completa para devolver función y belleza a tus dientes.",
+  },
+  {
     title: "Ortodoncia",
-    desc: "Alineación perfecta con brackets tradicionales o alineadores invisibles.",
+    desc: "Alineación perfecta con brackets tradicionales o alineadores invisibles para una sonrisa armoniosa y funcional.",
   },
   {
-    title: "Estética Dental",
-    desc: "Blanqueamiento, carillas y resinas para una sonrisa radiante.",
+    title: "Periodoncia e Implantes Dentales",
+    desc: "Tratamiento integral de encías y reemplazo de piezas dentales con implantes de última generación para una sonrisa completa.",
   },
   {
-    title: "Implantes",
-    desc: "Reemplazo de piezas dentales con tecnología de vanguardia.",
+    title: "Endodoncia Rotatoria",
+    desc: "Tratamiento de conductos con tecnología rotatoria avanzada y microscopía para preservar tus dientes naturales con máxima precisión.",
   },
   {
-    title: "Endodoncia",
-    desc: "Tratamiento de conductos con técnicas mínimamente invasivas.",
+    title: "Cirugía Dental y Urgencias Dentales",
+    desc: "Procedimientos quirúrgicos especializados y atención de urgencias dentales las 24 horas para resolver cualquier emergencia.",
   },
   {
-    title: "Odontopediatría",
-    desc: "Atención especializada para el cuidado dental de los más pequeños.",
-  },
-  {
-    title: "Periodoncia",
-    desc: "Salud integral de encías y tejidos de soporte.",
+    title: "Radiografía Dental",
+    desc: "Diagnóstico preciso con tecnología radiográfica digital avanzada para planificar el mejor tratamiento para cada paciente.",
   },
 ];
 
