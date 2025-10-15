@@ -24,7 +24,7 @@ const services = [
     title: "Ortodoncia",
     desc: "Alineación perfecta con brackets tradicionales o alineadores invisibles para una sonrisa armoniosa y funcional.",
     image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&crop=center",
+      "/services/ortodoncia.webp",
     features: [
       "Brackets metálicos y estéticos",
       "Alineadores invisibles",
@@ -49,7 +49,7 @@ const services = [
     title: "Endodoncia Rotatoria",
     desc: "Tratamiento de conductos con tecnología rotatoria avanzada y microscopía para preservar tus dientes naturales con máxima precisión.",
     image:
-      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop&crop=center",
+      "/services/endodoncia.webp",
     features: [
       "Endodoncia rotatoria de precisión",
       "Microscopía dental avanzada",
