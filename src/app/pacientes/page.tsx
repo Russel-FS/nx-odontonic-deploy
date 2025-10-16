@@ -90,10 +90,10 @@ export default function Pacientes() {
               className="space-y-6"
             >
               <h1 className="text-5xl md:text-6xl font-light text-gray-900 tracking-tight">
-                Nuestros pacientes
+                Nuestra Comunidad
               </h1>
               <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
-                Artistas y figuras públicas que confían en nosotros
+                Artistas y figuras públicas nos recomiendan
               </p>
             </motion.div>
           </div>
