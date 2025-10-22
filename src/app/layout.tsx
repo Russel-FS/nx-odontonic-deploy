@@ -3,6 +3,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import LayoutClient from "@/components/shared/LayoutClient";
 
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -29,29 +32,16 @@ export const metadata: Metadata = {
   authors: [{ name: "Go Odontic" }],
   creator: "Go Odontic",
   publisher: "Go Odontic",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  formatDetection: { email: false, address: false, telephone: false },
   metadataBase: new URL("https://goodontic.com"),
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Go Odontic",
     description:
       "Odontología integral en Surco: ortodoncia, estética, implantes y más. Agenda tu cita por WhatsApp.",
     url: "https://goodontic.com",
     siteName: "Go Odontic",
-    images: [
-      {
-        url: "/hero.webp",
-        width: 1200,
-        height: 630,
-        alt: "Go Odontic",
-      },
-    ],
+    images: [{ url: "/hero.webp", width: 1200, height: 630, alt: "Go Odontic" }],
     locale: "es_PE",
     type: "website",
   },
@@ -73,9 +63,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "h9Xbs65eg9z16nqn2ZzII7cXoEHxyapKAbWhdgu6Nsg",
-  },
+  verification: { google: "h9Xbs65eg9z16nqn2ZzII7cXoEHxyapKAbWhdgu6Nsg" },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -94,6 +82,9 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.className} bg-white text-slate-800`}>
         <LayoutClient>{children}</LayoutClient>
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
