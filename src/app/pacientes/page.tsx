@@ -74,6 +74,12 @@ const patients = [
     desc: "Miss Teen Región Lima 2024 visitó el consultorio para su control dental y estética de sonrisa.",
     url: "https://youtube.com/shorts/tBfCUcLwc10?si=ug5acErpRrjui0K9",
   },
+  {
+    name: "Dantes Cardosa",
+    category: "Cantante y Bailarín",
+    image: "/blog/Dantes-Cardosa.webp",
+    desc: "Dantes Cardosa confía en Go Odontic para su cuidado dental.",
+  },
 ];
 
 export default function Pacientes() {
