@@ -40,6 +40,18 @@ const teamMembers = [
       "Jefe del Departamento de Sanidad del Ala Aérea N°4",
     ],
   },
+  {
+    name: "Dra. Liz Dali Inga Baltodano",
+    specialty: "Ortodoncia y Ortopedia Maxilar",
+    image: "/teams/dr-liz-dali-Inga-baltodano.webp",
+    credentials: [
+      "Egresada de UIGV",
+      "Especialidad de Ortodoncia y Ortopedia Maxilar - UPC",
+      "Universidad Peruana de Ciencias Aplicadas",
+      "Miembro Asociación Peruana de Ortodoncia SPO",
+      "Miembro de World Federation of Orthodontists",
+    ],
+  },
 ];
 
 export default function Team() {
@@ -175,7 +187,19 @@ export default function Team() {
                 </span>
                 <span className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  UIGV
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  UPC
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
                   Universidad Castello Branco Brasil
+                </span>
+                <span className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
+                  SPO
                 </span>
                 <span className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-[#0e5d88] rounded-full"></div>
